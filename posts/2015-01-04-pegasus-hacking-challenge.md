@@ -53,7 +53,7 @@ ID  Response   Lines      Word         Chars          Request
 
 submit.php didn't provide any interesting information, but codereview.php showed a text area where I could input code for review. 
 
-->![](/images/2015-01-04/01.png)<-
+![](/images/2015-01-04/01.png)
 
 I initially started out by trying PHP code to execute reverse shells, but nothing appeared to work. If the submitted entry contained the a call to system(), it returned an error stating that code containing the system() function wouldn't be reviewed. It occurred to me that perhaps it was C code that was being reviewed, and not PHP. I tried the following C code which would give me a reverse shell on port 443: 
 

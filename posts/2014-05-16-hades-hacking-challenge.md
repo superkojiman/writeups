@@ -106,7 +106,7 @@ root@172.16.229.130's password:
 
 A large block of text was immediately returned. I copied the first few characters "f0VMRgEBAQ" and entered it into Google. The results implied that the block of text was something that had been Base64 encoded. 
 
-->![](/images/2014-05-16/01.png)<-
+![](/images/2014-05-16/01.png)
 
 With that in mind, I copied the block of test into a file called "foo.txt" and used the base64 command to decode it and redirect the results into a file called "bar"
 

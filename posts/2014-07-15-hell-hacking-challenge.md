@@ -92,23 +92,23 @@ ID	Response   Lines      Word         Chars          Request
 
 It was time to load it up into a web browser and see what was going on. I hooked up Iceweasel to BurpSuite and navigated to http://172.16.229.151
 
-->![](/images/2014-07-15/1.png)<-
+![](/images/2014-07-15/1.png)
 
 A couple of clues are provided on this page. Something is running on port 666 (which nmap already found), and the admin's name is Jack. 
 
 Nothing else of interest, so I moved on to the next page, /personal, which turned out to be a page dedicated to VulnHub's founder, g0tmi1k
 
-->![](/images/2014-07-15/2.png)<-
+![](/images/2014-07-15/2.png)
 
 So Jack is obsessed with g0tmi1k. Nothing more to see on this webpage, so I moved on to the next webpage, /super_secret_login_path_muhahaha
 
-->![](/images/2014-07-15/3.png)<-
+![](/images/2014-07-15/3.png)
 
 Finally something interesting, a login page. I'd need to get back to this later on. 
 
 Next I checked the files super_secret_login_path_muhahaha1 and super_secret_login_path_muhahahaserver that wfuzz found earlier. I started with /super_secret_login_path_muhahaha/1 which displayed an intruder alert message:
 
-->![](/images/2014-07-15/5.png)<-
+![](/images/2014-07-15/5.png)
 
 This was probably displayed when an incorrect login was used, possibly for the login form. 
 
@@ -167,7 +167,7 @@ The generated list was fairly big, at 29,246 words. I hoped that there were no s
 
 Before I could use raider, I needed to capture the HTTP headers sent by the login form. Since BurpSuite was already running, I turned on the proxy intercept and logged in with username jack (the only user I know that exists so far), and a dummy password, letmein. BurpSuite captured the request: 
 
-->![](/images/2014-07-15/4.png)<-
+![](/images/2014-07-15/4.png)
 
 I saved this into header.txt and modified the password value to ^%letmein^% as described by raider. 
 
@@ -205,35 +205,35 @@ After a couple of minutes, I was able to obtain the password for jack:
 
 I logged in and was presented with a set of folders:  
 
-->![](/images/2014-07-15/6.png)<-
+![](/images/2014-07-15/6.png)
 
 ### Local file inclusion
 
 Of these folders, Personal Folder and Notes were the most interesting. The Notes folder allowed the user to create a text file that was stored in some temporary directory. 
 
-->![](/images/2014-07-15/7.png)<-
+![](/images/2014-07-15/7.png)
 
 I assumed that this would be in /tmp or /var/tmp, or possibly some other hidden temporary directory elsewhere. For now there was no way to read it so I created a note that contained the text "superkojiman was here"
 
 I examined Personal Folder next. This was another login form, similar to the first. 
 
-->![](/images/2014-07-15/8.png)<-
+![](/images/2014-07-15/8.png)
 
 I still had BurpSuite intercepting requests and responses, so I attempted to login with the same credentials as before. The server replied by setting a cookie, failcount to 1. 
 
-->![](/images/2014-07-15/9.png)<-
+![](/images/2014-07-15/9.png)
 
 I kept going and the final reply from the server was an incorrect login and that I had used up one of my three attempts at logging in. 
 
-->![](/images/2014-07-15/10.png)<-
+![](/images/2014-07-15/10.png)
 
 I tested it a couple more times and when failcount was 3, a new cookie was set by the server, intruder which had the value 1: 
 
-->![](/images/2014-07-15/11.png)<-
+![](/images/2014-07-15/11.png)
 
 This in turn finally triggered that intruder alert message I had seen earlier. 
 
-->![](/images/2014-07-15/12.png)<-
+![](/images/2014-07-15/12.png)
 
 So the contents of super_secret_login_path_muhahaha/1 were being added into the panel.php. It took me a while to make the connection that the value 1 assigned to the intruder cookie was the actual file super_secret_login_path_muhahaha/1, and not some boolean value for "true". Once that clicked, I knew I had found a local file inclusion vulnerability. 
 

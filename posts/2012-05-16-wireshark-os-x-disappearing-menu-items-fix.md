@@ -11,7 +11,7 @@ Wireshark on OS X runs on top of X11. As most people who've used X11 application
 
 <!--more-->
 
-->![](/images/2012-05-16/01.png)<-
+![](/images/2012-05-16/01.png)
 
 This gets annoying quickly. Here's a quick fix:
 
@@ -23,6 +23,6 @@ sudo echo 'gtk-font-name="Lucida Grande 12"' > gtkrc
 
 Restart Wireshark and you now have readable menu items:
 
-->![](/images/2012-05-16/02.png)<-
+![](/images/2012-05-16/02.png)
 
 You might have noticed that the white theme itself has been replaced by a grey one since we've blown away the Clearlooks Quicksilver theme. Oh well. Maybe there's a better way to do it, but this works and makes using Wireshark on OS X a lot less annoying. 

@@ -24,7 +24,7 @@ Import Brainpan_III.ova into your preferred hypervisor and configure the network
 
 As an added bonus, I'm giving away a Brainpan sticker to those who complete Brianpan 3 and publish their writeup. 
 
-->![](/images/2015-07-27/stickers.jpg)<-
+![](/images/2015-07-27/stickers.jpg)
 
 I only have a handful of stickers, so to qualify for one, you need to: 
 

@@ -13,7 +13,7 @@ This is a walkthrough on how I completed level 2 of the De-ICE penetration testi
 
 Level 2 offers no hints on their page regarding the target server. The only bit of immediate information is on the target company website, which just lists employee names and email addresses:
 
-->![](/images/2011-08-01/01.png)<-
+![](/images/2011-08-01/01.png)
 
 I copied down the employee names and generated a list of possible login names that might be used on the server using a [script](/2011/07/17/creating-a-user-name-list-for-brute-force-attacks/) I wrote:
 
@@ -154,15 +154,15 @@ Currently scanning: 192.168.25.0/16   |   Screen View: Unique Hosts    �
 
 I foolishly assumed that there was only one target in the challenge! A quick nmap revealed that this target was only running HTTP. I checked out the website and found several PDFs linked on the main page:
 
-->![](/images/2011-08-01/02.png)<-
+![](/images/2011-08-01/02.png)
 
 I downloaded the PDFs but didn't find anything of interest. There were no other visible links or directories, so I decided to try nikto and dirbuster to see if anything would show up. Sure enough, dirbuster reported a /home directory:
 
-->![](/images/2011-08-01/03.png)<- 
+![](/images/2011-08-01/03.png) 
 
 I tried going to http://192.168.2.101/home/root and found that it was viewable. I did the same for the three known user accounts, but they were all empty. I decided to look for hidden files that might be useful: .bashrc, .bash_profile and .ssh. I got lucky and found that pirrip had a viewable .ssh directory!
 
-->![](/images/2011-08-01/04.png)<-
+![](/images/2011-08-01/04.png)
 
 Not only was it viewable, it contained the private and public SSH keys for pirrip. If the private key wasn't password protected, and pirrip used it to log into 192.168.2.100, then I might be able to do the same. I downloaded id_rsa and copied it to my ~/.ssh directory and changed the permissions to read/write only by root, crossed my fingers and tried to SSH to the server:
 

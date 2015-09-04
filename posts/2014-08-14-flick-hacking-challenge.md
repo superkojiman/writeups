@@ -243,15 +243,15 @@ PORT     STATE SERVICE VERSION
 
 Before launching my browser and navigating to the web server, I started up Burp Suite to capture all requests and responses. When that was done, I pointed my browser to http://172.16.229.158 and saw a gallery full of kittens. 
 
-->![](/images/2014-08-14/1.png)<-
+![](/images/2014-08-14/1.png)
 
 There was also a link that led to a login page with the clue "use the demo credentials that have been configured for the first user"
 
-->![](/images/2014-08-14/2.png)<-
+![](/images/2014-08-14/2.png)
 
 I usually leave brute forcing as a last resort, so I started off by running nikto and wfuzz to enumerate the website and look for any hidden directories. As it turned out, this was a bad idea and returned a lot of false positives. Upon closer examination, any resource that didn't exist got redirected to the following dummy page:
 
-->![](/images/2014-08-14/3.png)<-
+![](/images/2014-08-14/3.png)
 
 I started looking at the captures on Burp Suite and noticed that the cookie had the identifier "laravel_session" which had a value that was once again, Base 64 encoded. A quick search for Laravel vulnerabilities led me to an article titled [Laravel cookie forgery, decryption, and RCE](https://labs.mwrinfosecurity.com/blog/2014/04/11/laravel-cookie-forgery-decryption-and-rce/). There were some cool things discussed on there that included remote command execution. Unfortunately, it didn't say which version of Laravel was vulnerable, and I had no idea which version was running on Flick. 
 
@@ -303,43 +303,43 @@ So obvious that I could've probably hammered it in myself instead of writing a s
 
 I punched in the password and logged into the gallery. Having a look around, I noticed a couple of things. First, I could now upload pictures. This gave me the idea of uploading PHP based backdoors. Second, I could now download the pictures, and the interetsing thing about it was the GET request:
 
-->![](/images/2014-08-14/4.png)<-
+![](/images/2014-08-14/4.png)
 
 This looked like it might be vulnerable to local file inclusion. But first, I wanted to try to upload a shell. If that didn't work, local file inclusion would at least let me read some files and hopefully find a way into the server. 
 
 I clicked on the upload link which presented the following webpage:
 
-->![](/images/2014-08-14/5.png)<-
+![](/images/2014-08-14/5.png)
 
 I selected my PHP reverse shell and clicked on the Save button which uploaded it. I was returned to the gallery and found my uploaded file on page 2. The only thing visible here was the download link. 
 
-->![](/images/2014-08-14/6.png)<-
+![](/images/2014-08-14/6.png)
 
 The PHP reverse shell I uploaded would connect back to my machine on port 443, so I made sure I had a netcat listener waiting for the shell. I needed to find a way to "view" the uploaded file. The one URL I could view it was http://172.16.229.158/image/view/qnaovkOgXerJ but alas, it just returned it as regular text:
 
-->![](/images/2014-08-14/7.png)<-
+![](/images/2014-08-14/7.png)
 
 I tried a few more things but it became clear that there was no way to get my reverse shell this way. On to the possible local file inclusion. For this I used Burp Suite's Repeater function to modify the value of filename and quickly send it to the server and get the reply. I started off with attempting to read ../../../../etc/passwd, which failed.
 
-->![](/images/2014-08-14/8.png)<-
+![](/images/2014-08-14/8.png)
 
 I assumed there was some basic filtering going on, so I tried a different approach: ....//....//....//....//etc/passwd
 
-->![](/images/2014-08-14/9.png)<-
+![](/images/2014-08-14/9.png)
 
 Hey it worked! From the passwd file I identified two users on the target; robin and dean. I spent a good amount of time enumerating the target as much as I could, and one of the more helpful clues came from /etc/apache2/services-enabled/000-default
 
-->![](/images/2014-08-14/10.png)<-
+![](/images/2014-08-14/10.png)
 
 This revealed the website's DocumentRoot at /var/www/flick_photos. I remembered the web application was using Laravel, which I wasn't familiar with. After a bit of Googling, I found Laravel on [GitHub](https://github.com/andrewelkins/Laravel-4-Bootstrap-Starter-Site/), and that allowed me to see the Laravel structure. After looking around, I identified a couple of interesting directories; app/config and app/database.
 
 I was able to pull down app/database/production.sqlite from the target. I didn't even have to load it up using sqlite3 as the dump actually displayed the table and fields:
 
-->![](/images/2014-08-14/11.png)<-
+![](/images/2014-08-14/11.png)
 
 I clicked on the Hex tab and was able to more clearly read the contents of the SQLite database. From here I could see the usernames and passwords. 
 
-->![](/images/2014-08-14/12.png)<-
+![](/images/2014-08-14/12.png)
 
 A quick copy and paste, and I had the passwords for robin and dean.
 

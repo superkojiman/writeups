@@ -105,7 +105,7 @@ Nmap done: 1 IP address (1 host up) scanned in 161.64 seconds
 
 Running nikto and dirbuster on port 80 returned nothing useful, so I visited the website where I was greeted with the following image: 
 
-->![](/images/2014-10-15/01.png)<-
+![](/images/2014-10-15/01.png)
 
 A hint "Gotta look harder" led me to look at the source code for the webpage, but I found nothing. I downloaded the image and checked the metadata, but found nothing still. Finally, I just ran strings on it and was rewarded with another clue:
 

@@ -23,7 +23,7 @@ netdiscover reports the IP address of the vulnimage server to be 192.168.1.140. 
 
 While that's running, we fire up a web browser and attempt to access http://192.168.1.140. A web server is found to be running, hosting what appears to be a blog.
 
-->![](/images/2012-08-27/01.png)<-
+![](/images/2012-08-27/01.png)
 
 All the posts were made by the user blogger. Looking around the blog, we discover that we can make new posts (http://192.168.1.140/admin/post.php) and change the user's signature (http://192.168.1.140/admin/profile.php). In both cases, the poster is required to authenticate with a username and password.
 By entering basic SQL queries into the password field, we discover that both forms are vulnerable to SQL injection attacks. We are able to change the contents of a signature by entering blogger into the username field, the word "Hacked" into the signature field, and the following into the password field:
@@ -34,15 +34,15 @@ x' or 'x'='x
 
 Clicking on the Submit button prints a message indicating that we have successfully changed the user's signature:
 
-->![](/images/2012-08-27/02.png)<-
+![](/images/2012-08-27/02.png)
 
 The update is verified by returning to the main blogging screen. All the posts made by blogger are now signed with the word "Hacked.":
 
-->![](/images/2012-08-27/03.png)<-
+![](/images/2012-08-27/03.png)
 
 Now that we know we can write to a file, we can inject PHP code into it and attempt to obtain a reverse shell into the server. Viewing the source code for profile.php, we notice that signatures appear to be saved in a file with the suffix "sig.txt"
 
-->![](/images/2012-08-27/04.png)<-
+![](/images/2012-08-27/04.png)
 
 This is a hidden field, which means we should be able to alter it if we can intercept the request to the server. This is easily done with a proxy or Firefox's TamperData extension. First, we need to locate the signature files.
 
@@ -77,7 +77,7 @@ The service appears to prompt the user for input, and simply prints it back out 
 
 Moving back to DirBuster, several directories have been discovered.
 
-->![](/images/2012-08-27/05.png)<-
+![](/images/2012-08-27/05.png)
 
 Of particular interest are the repo and profiles directories. The repo directory contains a file buffd.c. We download this file for later examination. The profiles directory contains the signature files for each user - exactly what we're looking for. We can now inject our PHP reverse shell and gain a remote shell on the server.
 
@@ -85,15 +85,15 @@ First, we enable TamperData on Firefox so we can replace the "sig.txt" extension
 
 TamperData intercepts the request, and gives us a chance to change the file extension to "shell.php"
 
-->![](/images/2012-08-27/06.png)<-
+![](/images/2012-08-27/06.png)
 
 We submit the update and head over to http://192.168.1.140/profiles to see if our backdoor was created:
 
-->![](/images/2012-08-27/07.png)<-
+![](/images/2012-08-27/07.png)
 
 Sure enough, our backdoor has been written to the server. We startup a netcat listener on port 443 and click on blogger-shell.php to trigger the reverse shell:
 
-->![](/images/2012-08-27/08.png)<-
+![](/images/2012-08-27/08.png)
 
 Our shell is running under the context of the www-data user, so we'll need to find a way to escalate to root. We identify several services running as the root user using the following command:
 
@@ -101,7 +101,7 @@ Our shell is running under the context of the www-data user, so we'll need to fi
 sh-2.05b$ ps aux | grep root
 ```
 
-->![](/images/2012-08-27/09.png)<-
+![](/images/2012-08-27/09.png)
 
 Of particular interest, is one process called buffd. We had previously obtained a copy of the code for this program from http://192.168.1.140/repo. Examining the code, we find a function called vulnerable which uses strcpy to copy a user provided string into a buffer of 120 bytes.
 
@@ -304,7 +304,7 @@ We're still sending 132 bytes of "A"s, followed by the return address pointing s
 
 To test it, we setup a netcat listener on port 4444, restart gdb, and execute poc.py once again.
 
-->![](/images/2012-08-27/10.png)<-
+![](/images/2012-08-27/10.png)
 
 Our exploit works and we've obtained a reverse shell into our own machine. We update the target IP address on the exploit to point to the vulnimage server and run the exploit again, which results in... nothing!
 
@@ -312,7 +312,7 @@ Although the exploit works on our machine, it fails against the server. In order
 
 The solution is to copy /usr/local/sbin/buffd to /var/www/profiles and transfer it to our machine using wget. The program is then modified using hexedit to change the listening port from 7777 to 7778:
 
-->![](/images/2012-08-27/11.png)<-
+![](/images/2012-08-27/11.png)
 
 The modified program is copied to our /var/www/ directory, and transferred back to the vulnimage server using wget once again. We can run this modified copy of buffd as our www-data user:
 
@@ -374,11 +374,11 @@ payload += "\x43" * (2000 - len(payload))
 
 We run poc.py once again, and this time, we receive a connection on our netcat listener:
 
-->![](/images/2012-08-27/12.png)<-
+![](/images/2012-08-27/12.png)
 
 We can now try to target the actual service again. poc.py is updated to connect to port 7777 and the exploit is executed:
 
-->![](/images/2012-08-27/13.png)<-
+![](/images/2012-08-27/13.png)
 
 Our netcat listener receives a connection from the server and grants us a root shell! Game over! The completed poc.py is as follows:
 

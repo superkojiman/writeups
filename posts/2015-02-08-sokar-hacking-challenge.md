@@ -12,6 +12,6 @@ To commemorate their second birthday, [VulnHub](https://www.vulnhub.com) is hold
 
 Solving Sokar took a bit of work, and writing it all up is rather tiresome. Therefore I've decided to share my solution using a different medium, which I hope you enjoy: 
 
-->![](/images/2015-02-08/01.gif)<-
+![](/images/2015-02-08/01.gif)
 
 Sokar was a lot of fun. If you complete it, don't forget to submit a writeup for a chance to win prizes! VulnHub has offered fantastic prizes in the past which include gift cards, t-shirts, and challenge coins. Don't miss out on it!

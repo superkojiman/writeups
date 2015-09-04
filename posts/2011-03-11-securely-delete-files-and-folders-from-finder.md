@@ -21,19 +21,19 @@ A solution to this is to create a Service such that when you right click in a fi
 
 1. Go into your Applications folder and launch Automator. When it starts up you'll be asked what kind of project you'd like to use. Select Services.
 
-    ->![](/images/2011-03-11/step1.png)<-
+    ![](/images/2011-03-11/step1.png)
 
 2. Set the Service receives selected option to files or folders.
 
-    ->![](/images/2011-03-11/step2.png)<-
+    ![](/images/2011-03-11/step2.png)
 
 3. On the left side of Automator, select Library > Files & Folders and on the panel to the right of that, select Get Selected Finder Items. Once you've selected it, drag it to the large panel on the right to add it to the workflow. 
 
-    ->![](/images/2011-03-11/step3.png)<-
+    ![](/images/2011-03-11/step3.png)
 
 4. We need to add another item to the workflow. Back on the left side of Automator, select Library > Utilities, and Run Shell Script. As before drag it to the workflow panel and it should appear right under Get Selected Finder Items.
 
-    ->![](/images/2011-03-11/step4.png)<-
+    ![](/images/2011-03-11/step4.png)
 
 5. Once you've added Run Shell Script, click on its Pass Input' option and select as arguments. You should see the text in the input box change to the following: 
 
@@ -51,7 +51,7 @@ ${HOME}/secure.delete.log
 
 This simply means run srm on the selected files and create a log file in the user's home folder. 
 
-->![](/images/2011-03-11/step5.png)<-
+![](/images/2011-03-11/step5.png)
 
 Finally, click on File > Save, and save it as Secure Delete.
 

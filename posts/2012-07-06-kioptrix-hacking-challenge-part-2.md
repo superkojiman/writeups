@@ -57,7 +57,7 @@ Network Distance: 1 hop
 
 A website is available, and it looks like a MySQL database runs in the backend. nmap also found an open CUPS port. I decided to start with the webserver. Browsing over to http://192.168.1.146, I was greeted with a login form.
 
-->![](/images/2012-07-06/01.png)<-
+![](/images/2012-07-06/01.png)
 
 I decided to see if I could bypass the authentication mechanism using a simple SQL injection attack. For the username I entered test, and for the password I entered x' or 'x'='x. I was going by the assumption that the backend SQL code looked something like
 
@@ -73,15 +73,15 @@ SELECT * FROM ACCOUNTS WHERE USERNAME='test' AND PASSWORD='x' OR 'x'='x'
 
 I hit the Login button and was presented with a new form. The SQL injection worked and I was able to login as some authenticated user.
 
-->![](/images/2012-07-06/02.png)<-
+![](/images/2012-07-06/02.png)
 
 It looked to be some sort of diagnostic tool that allowed an authenticated user to ping a machine. I punched in 127.0.0.1 and hit Submit to see what would happen. A new browser tab opened up that showed the ping results:
 
-->![](/images/2012-07-06/03.png)<-
+![](/images/2012-07-06/03.png)
 
 I wondered if this form was susceptible to code injection. I assumed that the backend code for this form probably just made a system call to ping and passed it the IP address that I had entered in the form. If that was the case, I could chain my own commands at the end of the IP address and have them execute on the server. I started off with 127.0.0.1;id as a simple test:
 
-->![](/images/2012-07-06/04.png)<-
+![](/images/2012-07-06/04.png)
 
 Sure enough, right at the end of the ping results, it showed me that the process had run as the apache user. If I could inject code that would run on the webserver, then I could make it give me a reverse shell so that I could have shell access to the server. Probing the system further, I used the whereis command and found netcat. It was time to try a reverse shell. On my terminal I started a netcat listener
 
@@ -97,7 +97,7 @@ On the webpage I entered the following into the form and hit Submit
 
 Netcat on the server started up and connected to my netcat listener and gave me a reverse shell.
 
-->![](/images/2012-07-06/05.png)<-
+![](/images/2012-07-06/05.png)
 
 Now that I had shell access to the system, exploring it would be much easier. Running uname gave me the kernel version, 2.6.9. Checking against exploit-db, I found several exploits against the 2.6.x kernel:
 

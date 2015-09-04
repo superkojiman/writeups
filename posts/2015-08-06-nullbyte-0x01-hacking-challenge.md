@@ -23,7 +23,7 @@ I found the IP address of the target using netdiscover, and ran a full portscan 
 
 Web server on port 80, and SSH on non-standard port 777. I loaded up the web site on my browser: 
 
-->![](/images/2015-08-06/01.png)<-
+![](/images/2015-08-06/01.png)
 
 I ran nikto and wfuzz on the web server as well and came up with a handful of interesting directories, but nothing that I could leverage at the moment: 
 
@@ -79,7 +79,7 @@ Image Size                      : 235x302
 At first I thought kzMb5nVYJw was some kind of encrypted text. I tried simple ciphers like ROT13 and Caesar, but nothing returned anything interesting. I tried using it as a password, but that didn't work. What eventually did work was using it in the URL: 
 
 
-->![](/images/2015-08-06/02.png)<-
+![](/images/2015-08-06/02.png)
 
 It was a form asking for a key. Viewing the source revealed a clue: 
 
@@ -120,7 +120,7 @@ Found key elite
 
 Took a few minutes, but I found the key. I punched it in and was greeted with yet another form. This time it was asking for a username to look up:
 
-->![](/images/2015-08-06/03.png)<-
+![](/images/2015-08-06/03.png)
 
 Viewing the source revealed another PHP file; 420search.php:  
 
@@ -135,7 +135,7 @@ Enter username:<br>
 
 Accessing the URL for this revealed some interesting leaks: 
 
-->![](/images/2015-08-06/04.png)<-
+![](/images/2015-08-06/04.png)
 
 Two usernames, IDs, and positions. It looked like fields in a database. While the previous form wasn't connected to a database, I was betting that this one was. Searching for username resulted in the following URL: http://192.168.107.135/kzMb5nVYJw/420search.php?usrtosearch=ramses
 
@@ -261,7 +261,7 @@ Table: users
 
 There's a Base64 MD5 hash for ramses' password. To crack it, I just Googled it:
 
-->![](/images/2015-08-06/05.png)<-
+![](/images/2015-08-06/05.png)
 
 Password was omega, and it turned out those were the SSH credentials for ramses. 
 

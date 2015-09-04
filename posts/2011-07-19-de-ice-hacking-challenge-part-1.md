@@ -17,11 +17,11 @@ I setup two virtual machines, one running Backtrack 4RT2, and one running De-Ice
 
 Before attacking the target, I needed to get some information about it. So far the only thing I knew was its IP address and that it's a company. Companies usually have websites, so I pointed my web browser to http://192.168.1.100 to see if there was anything there:
 
-->![](/images/2011-07-19/01.png)<-
+![](/images/2011-07-19/01.png)
 
 Ok there's some information about the challenge. When I scrolled down I saw a link for the game information. Clicking on that took me to the company's web page which provided a bit of information:
 
-->![](/images/2011-07-19/02.png)<-
+![](/images/2011-07-19/02.png)
 
 A list of employee names and their email addresses! The recipient name in an email address is usually the same login name used to log into a server. So I made a list of the employee names into a file and generated a list of possible login names that I could use in a brute force attack. In my previous [post](/2011/07/17/creating-a-user-name-list-for-brute-force-attacks/) I talked about generating a list of login names based off real names. Using that method I came up with the following list:
 

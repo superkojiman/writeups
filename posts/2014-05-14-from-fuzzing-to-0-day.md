@@ -35,27 +35,27 @@ I installed EFSWS on a Windows XP Professional SP3 virtual machine that I downlo
 
 When I first started EFSWS, I was greeted by a popup message asking if I wanted to buy the software or just run it as a trial.
 
-->![](/images/2014-05-14/01.png)<-
+![](/images/2014-05-14/01.png)
 
 As it turns out, this pops up every time EFSWS is started and blocks EFSWS from starting its web server until it's closed. Fortunately, Peach is capable of looking out for these popup windows and closing them so that it can continue automating its test cases without us having to close the popup window manually. 
 
 EFSWS has several options to customize its features. I decided to leave them at their default setting. 
 
-->![](/images/2014-05-14/02.png)<-
+![](/images/2014-05-14/02.png)
 
 At this point, EFSWS is listening on port 80, ready to serve requests from web browsers. 
 
 Before launching my web browser, I attached SocketSniff to it so I could capture the messages sent between the web browser and EFSWS. Once that was done, I used Firefox to navigate to EFSWS.
 
-->![](/images/2014-05-14/03.png)<-
+![](/images/2014-05-14/03.png)
 
 I was greeted with a login screen. The first thing that caught my eye was a hyperlink under the login button that said "login as a guest". I clicked on it and was presented with some virtual folders: 
 
-->![](/images/2014-05-14/04.png)<-
+![](/images/2014-05-14/04.png)
 
 I explored a little bit more and after a while, decided to see what SocketSniff had captured. One of the earlier captures was for the vfolder.ghp request: 
 
-->![](/images/2014-05-14/05.png)<-
+![](/images/2014-05-14/05.png)
 
 I noticed that the cookie contained key/value pairs called UserID and PassWD. These keys had no values assigned to them, probably because I had logged in as a guest. It looked like an interesting target to fuzz, so I decided to start with that. 
 
@@ -174,11 +174,11 @@ I shutdown EFSWS and SocketSniff and went ahead and started the fuzzing session 
 peach -DHOST=192.168.1.140 -DPORT=80 efs_fuzz.xml TestVfolder
 ```
 
-->![](/images/2014-05-14/06.png)<-
+![](/images/2014-05-14/06.png)
 
 Peach immediately launched EFSWS, closed the popup window, and started throwing test cases at the server. Within a few minutes, it started reporting crashes:  
 
-->![](/images/2014-05-14/07.png)<-
+![](/images/2014-05-14/07.png)
 
 At this stage, I typically just let it do its thing for a few more minutes, or hours, depending on what crashes it's found so far. 
 
@@ -186,7 +186,7 @@ At this stage, I typically just let it do its thing for a few more minutes, or h
 
 When I came back to it, I looked into the Logs directory to see what crashes had been reported: 
 
-->![](/images/2014-05-14/08.png)<-
+![](/images/2014-05-14/08.png)
 
 Three of the directories created were labeled EXPLOITABLE, so those should get higher priority in examination. After going through some of the exploitable crash information, I settled on test case  EXPLOITABLE_0x020c616f_0x021e756f\518. 
 
@@ -259,17 +259,17 @@ Now that I could replicate the test case, I needed to examine what was happening
 
 I stopped the fuzzing session, restarted EFSWS, and attached Immunity Debugger to it. According to WindowsDebugEngine_description.txt, the faulting instruction was at address 0x0045c8c2, so I set a breakpoint there. 
 
-->![](/images/2014-05-14/09.png)<-
+![](/images/2014-05-14/09.png)
 
 I executed the PoC and the execution stopped at the breakpoint. A quick look at the stack showed that my payload hadn't been received yet, so I hit F9 to continue execution. The breakpoint was hit a second time, and still, the payload hadn't been received. I hit F9 once more, and this time, I noticed that EDX had been overwritten with 0x41414141 and the payload was visible in the stack. 
 
-->![](/images/2014-05-14/10.png)<-
+![](/images/2014-05-14/10.png)
 
 ECX, ESI, and EDI were all pointing to locations in the payload, and the payload itself was located on the stack starting at address 0x19f68a8
 
 I hit F9 to continue execution and an exception handler got triggered due to an access violation when attempting to read 0x41414169. I took a quick peek at the SEH chain hoping to see an overwrite, but there was none:
 
-->![](/images/2014-05-14/12.png)<-
+![](/images/2014-05-14/12.png)
 
 I went ahead and hit Shift-F9 several times to pass the exception to the application and it eventually recovered and waited for the next request. The server itself didn't crash, so I didn't need to restart it and reattach it to the debugger. 
 
@@ -292,7 +292,7 @@ payload = "Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1Ab2Ab3Ab4Ab5Ab6Ab7Ab8Ab9Ac0Ac1Ac2
 
 I executed the PoC and continued execution until EDX was overwritten with part of the cyclic pattern: 
 
-->![](/images/2014-05-14/14.png)<-
+![](/images/2014-05-14/14.png)
 
 I ran this value against pattern_offset.rb and it returned the offset 80. To verify this, I updated the payload to write 0x42424242 80 bytes into the payload. 
 
@@ -302,7 +302,7 @@ payload = "A"*80 + "B"*4 + "C"*316
 
 I ran the PoC again and sure enough, EDX was overwritten with 0x42424242
 
-->![](/images/2014-05-14/15.png)<-
+![](/images/2014-05-14/15.png)
 
 Now that I knew EDX's offset, I needed to make it such that EDX+28 pointed to an address that contained a pointer to a set of instructions I wanted to execute. The easiest location to point to was on the stack. Windows XP doesn't come with ASLR, so the stack addresses aren't randomized. Looking at the stack, I noticed the payload started at  0x019F68a8 and ended at  0x019F6a34. All I needed to do was have EDX+28 fall somewhere in between that range. 
 
@@ -310,11 +310,11 @@ What instructions should the pointer in that location point to? ECX, ESI, and ED
 
 After a bit of searching, I found a CALL ESI at 0x10023701 in EFSWS's ImageLoad.dll.
 
-->![](/images/2014-05-14/13.png)<-
+![](/images/2014-05-14/13.png)
 
 All I needed to do was to put 0x10023701 somewhere on the stack that EDX+28 would resolve to. I decided to place it at 0x019F6968, which was 108 bytes into the buffer of "C"s. 
 
-->![](/images/2014-05-14/16.png)<-
+![](/images/2014-05-14/16.png)
 
 That meant EDX needed to be set to 0x019F6940, since 0x019F6940 + 28 = 0x019F6968. The payload was updated to reflect this: 
 
@@ -330,7 +330,7 @@ I executed PoC again and hit F9 until the payload was received. EDX had now been
 
 ESI was pointing to 0x019F68E8, which was 64 bytes into the payload: 
 
-->![](/images/2014-05-14/17.png)<-
+![](/images/2014-05-14/17.png)
 
 There were only 16 bytes to work with here, but there was plenty of space in the buffer of "C"s starting at 0x019F68FC. 
 
@@ -350,7 +350,7 @@ payload += struct.pack("<I", 0x10023701)     # pointer to CALL ESI
 
 I ran the PoC once again, and stepped through the instructions. Everything worked as before, and after CALL ESI was executed, the execution went to the SUB ESI,-90 and JMP ESI instructions: 
 
-->![](/images/2014-05-14/18.png)<-
+![](/images/2014-05-14/18.png)
 
 SUB ESI,-90 sets ESI to 0x019F6978, 12 bytes past 0x019F6968. This is where the shellcode will be placed. 
 
@@ -393,11 +393,11 @@ payload += "C"*75                            # padding
 
 I executed the PoC and stepped through each instruction until it got to the JMP ESI. I hit F7 to step through and it landed in the middle of the NOP sled: 
 
-->![](/images/2014-05-14/19.png)<-
+![](/images/2014-05-14/19.png)
 
 Confident that everything should work from here on, I hit F9 to continue execution, and calc.exe popped up! The exploit worked. 
 
-->![](/images/2014-05-14/20.png)<-
+![](/images/2014-05-14/20.png)
 
 Here's the PoC after all the changes: 
 

@@ -10,13 +10,13 @@ A couple of years ago I successfully completed the Offensive Security [Pentestin
 
 <!--more-->
 
-->![](/images/2014-12-05/01.jpg)<-
+![](/images/2014-12-05/01.jpg)
 
 First a bit of background about myself. I'm not a professional pentester, nor do I work in infosec. I just do this for fun. It's a hobby, and one that I enjoy. I took PWB and CTP because I thought it'd be a great way to test myself. That said, I was excited to return to the Offensive Security labs, and so I readily agreed to beta test the playground.
 
 I received an email containing a connectivity pack to VPN into the playground, instructions, and access to the playground's dashboard. Offensive Security recommended using a 32-bit Kali Linux VM for this, so I downloaded one and customized it to my liking. The beta testing was initially just for two weeks, but it was generously extended by a few more days later on. Once I had connected to the playground via VPN, the first thing I did was to check out the dashboard. 
 
-->![](/images/2014-12-05/02.jpg)<-
+![](/images/2014-12-05/02.jpg)
 
 The dashboard contains a listing of all the machines that can be attacked. One of the first things I noticed was that it listed machines in different networks. It looked like some of the other machines were in internal networks that I would eventually need to pivot to in order to reach them. The dashboard also allowed me to revert and reboot each machine. Each machine has an original state and reverting it brings it back to this state. It's handy because the lab is shared by other attackers, so in order to ensure that you're attacking a machine in a clean state, you need to revert it. 
 

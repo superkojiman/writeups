@@ -11,9 +11,9 @@ I've been playing a few of these hacking challenges over the past few months, so
 
 <!--more-->
 
-->![](/images/2012-04-07/01.png)<-
+![](/images/2012-04-07/01.png)
 
-->![](/images/2012-04-07/02.png)<-
+![](/images/2012-04-07/02.png)
 
 I found a login form on the website. I thought this might be vulnerable to a SQL injection attack, and I would try sqlmap against it later. In the meantime, I looked at the nmap report:
 
@@ -192,11 +192,11 @@ cid,password,upload,username
 
 I thought these might be the login credentials to the server or to the website. The other tables provided more information, the blogs_table has some blog posts but was a bit difficult to read with the current formatting. I thought if I logged into the website it might be easier to read. The employees table listed employee information including email addresses and phone numbers, the calendar table listed events, and the page table listed several PHP files - possibly pages that the website recognizes. I decided it was time to log into the website. I picked user etenenbaum because the upload field in the accounts table for his entry was set to 1, which usually means true. Using his credentials, I gained access into the website: 
 
-->![](/images/2012-04-07/03.png)<-
+![](/images/2012-04-07/03.png)
 
 I started exploring the website. The Message Board section had some interesting information. Looks like they use knockknock which adds an extra layer of security to the server when trying to SSH into it. Essentially, a port knock is required before the SSH port is opened to allow the user to connect. Instructions are provided on how to setup knockknock so a user can connect. The Upload section allows a user to upload files to their home directories. I point my browser to etenenbaum's page to see if there was anything of interest: 
 
-->![](/images/2012-04-07/04.png)<-
+![](/images/2012-04-07/04.png)
 
 I decided to try to upload something. On the upload page I have the option of having a gzip'd file automatically extracted. Not sure what that meant at the time, so I created two text files and gzip'd one of them. I wanted to upload both files to see what would happen.
 

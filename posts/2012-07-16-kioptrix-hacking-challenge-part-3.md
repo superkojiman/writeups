@@ -11,7 +11,7 @@ The third Kioptrix challenge is level 1.2, which can be downloaded from [http://
 
 <!--more-->
 
-->![](/images/2012-07-16/01.png)<-
+![](/images/2012-07-16/01.png)
 
 On my Backtrack VM, I used netdiscover to identify the IP address of the Kioptrix VM as 192.168.1.149. I added this IP address to /etc/hosts and mapped it to kioptrix3.com
 
@@ -21,7 +21,7 @@ On my Backtrack VM, I used netdiscover to identify the IP address of the Kioptri
 
 That completes the setup and pointing the browser to http://kioptrix3.com shows the Ligoat Security website:
 
-->![](/images/2012-07-16/02.png)<-
+![](/images/2012-07-16/02.png)
 
 I begin by running a full port scan on the server using onetwopunch.sh. This covers all 65,535 TCP and UDP ports:
 
@@ -60,7 +60,7 @@ Only two ports discovered, http and ssh. I decided to start exploring the websit
 
 The website also promotes their new gallery, so I started poking around in it. Clicking on the Ligoat Press Room displays a page that has a form at the bottom, which allows us to sort the images:
 
-->![](/images/2012-07-16/03.png)<-
+![](/images/2012-07-16/03.png)
 
 Playing around with this form causes the URL to change around a bit:
 
@@ -184,7 +184,7 @@ Table: dev_accounts
 
 Two accounts have been discovered with hashed passwords. I chose not to crack the hashes using sqlmap and used [http://www.md5decrypter.co.uk/](http://www.md5decrypter.co.uk/) instead. md5decrypter.co.uk is an excellent resource and I've used it numerous times to quickly crack various hashes.
 
-->![](/images/2012-07-16/04.png)<-
+![](/images/2012-07-16/04.png)
 
 md5decrypter.co.uk successfully cracks both passwords. I decide to try to login to the server using SSH and the cracked credentials. The first attempt is done with loneferret's account:
 
@@ -237,11 +237,11 @@ User loneferret may run the following commands on this host:
 
 It looks like I can only run /usr/local/bin/ht. Running this command launches the ht editor:
 
-->![](/images/2012-07-16/05.png)<-
+![](/images/2012-07-16/05.png)
 
 Since the ht editor is running as root right now, I can easily open up any file readable only by root. I go to File > Open > /etc/sudoers (Mac users running this on VMware Fusion, it's Option+Command+F):
 
-->![](/images/2012-07-16/06.png)<-
+![](/images/2012-07-16/06.png)
 
 I see the entry for loneferret and update it so loneferret can run the bash shell using sudo. This should give us our root shell:
 

@@ -13,6 +13,6 @@ I use Chrome's desktop notifications when using Gtalk, and Growl notifications f
 
 I looked at the included Growl styles and found that NotifyOSX by Daniel Bergey seemed to match the Chrome notification to some extent. After a bit of tinkering, I came up with something that looks similar enough. Tested on Growl 1.2.2.
 
-->![](/images/2012-09-29/01.png)<-
+![](/images/2012-09-29/01.png)
 
 Download here: [Chromify Growl Style](http://www.techorganic.com/software/Chromify.zip)

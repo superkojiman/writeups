@@ -15,7 +15,7 @@ Pivoting is a technique that allows attackers to use a compromised system to att
 
 There are two networks, 192.168.81.0/24 and 192.168.63.0/24. Our attacking machine, and a web server that has access to the 192.168.63.0/24 network are located in the 192.168.81.0/24 network. Our target, a Windows XP SP2 machine, is located in the 192.168.63.0/24. Our attacking machine does not have direct access to it, but the web server does.
 
-->![](/images/2012-10-06/01.jpg)<-
+![](/images/2012-10-06/01.jpg)
 
 We've already compromised the web server and obtained SSH access to it as the user webmaster. Our goal is to use the web server as our pivot and obtain a remote shell on the Windows XP machine.
 

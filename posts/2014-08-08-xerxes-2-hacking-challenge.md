@@ -15,7 +15,7 @@ It occurred to me that I never wrote a writeup for Xerxes 1 after I completed it
 
 > \#xerxes2 stickers arrived! Grab \#xerxes2 from http://vulnhub.com , root it, write it up & I'll send you stickers!
 
-->![](https://pbs.twimg.com/media/Bug9NYmCYAAlUdb.jpg)<-
+![](https://pbs.twimg.com/media/Bug9NYmCYAAlUdb.jpg)
 
 Stickers?! Oh yeah!
 
@@ -54,15 +54,15 @@ PORT      STATE SERVICE VERSION
 
 As it turned out, most of these ports were red herrings with the exception of port 8888. Running on port 8888 was actually an IPython Notebook.  
 
-->![](/images/2014-08-08/01.png)<-
+![](/images/2014-08-08/01.png)
 
 From here I identified the first user, delacroix. Nothing much to see on this page so I clicked on New Notebook which took me to another webpage where I could enter my commands if I prefixed them with an exclamation point. 
 
-->![](/images/2014-08-08/02.png)<-
+![](/images/2014-08-08/02.png)
 
 To get a proper shell, I wrote my SSH key into delacroix's .ssh/authorized_keys file and made sure the permissions were set correctly. 
 
-->![](/images/2014-08-08/03.png)<-
+![](/images/2014-08-08/03.png)
 
 Once that was set, I logged into the server as delacroix.
 
@@ -476,7 +476,7 @@ total 43932
 
 audio.txt was a red herring; basically some audio file piped into port 4444 that would taunt you. dump.gpg was some kind of password protected encrypted file, and polito.pdf offered some clue regarding dump.gpg
 
-->![](/images/2014-08-08/04.png)<-
+![](/images/2014-08-08/04.png)
 
 Scanning the QR code revealed yet another taunt from Xerxes. 
 
@@ -493,7 +493,7 @@ Now I definitely knew I'd seen something like this before. I poured through the 
 
 I ran qemu-system-i386 and passed it polito.pdf as its argument and got the password for dump.gpg:
 
-->![](/images/2014-08-08/05.png)<-
+![](/images/2014-08-08/05.png)
 
 Using the password, I was able to decrypt the dump file: 
 

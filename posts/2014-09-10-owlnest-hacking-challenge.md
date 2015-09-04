@@ -175,36 +175,36 @@ dirb found quite a few directories, all of which appeared to have directory inde
 
 I started up BurpSuite to capture requests/responses from the webserver and pointed my browser to http://172.16.229.164 I was greeted with a pretty login screen. 
 
-->![](/images/2014-09-10/01.png)<-
+![](/images/2014-09-10/01.png)
 
 I noticed it had an option at the bottom to register a new user. A quick look at BurpSuite showed that it had already identified some other PHP files including something called uploadform.php which looked like it loaded another PHP file, forms/form.php. This could be vulnerable to local file inclusion. 
 
-->![](/images/2014-09-10/02.png)<-
+![](/images/2014-09-10/02.png)
 
 Interestingly, when I looked at the rendered response from the root directory of the website, it displayed the content of a user who would be logged in. 
 
 
-->![](/images/2014-09-10/03.png)<-
+![](/images/2014-09-10/03.png)
 
 In fact, I was able to trigger this response by intercepting the response with BurSuite and changing the "302 Found" to "200 Found" and then forwarding the request. However it appeared that it simply logged me in as no user and I was unable to leverage this for anything. 
 
 Back to the login page, I attempted once again some common user credentials and some basic SQL injection, but none of them worked. So I went ahead and clicked on the hyperlink to register a new account. 
 
-->![](/images/2014-09-10/04.png)<-
+![](/images/2014-09-10/04.png)
 
 I filled up the form, and set the username to "superkojiman" with the password "password". I clicked on register and was brought to a page confirming that my account had been created. 
 
-->![](/images/2014-09-10/05.png)<-
+![](/images/2014-09-10/05.png)
 
 I clicked on the login button and was brought back to the login screen. From here, I logged in with the user credentials I just created. 
 
-->![](/images/2014-09-10/06.png)<-
+![](/images/2014-09-10/06.png)
 
 I now had access to two more locations on the website; Gallery and Upload. Clicking on Gallery showed an album containing pictures of owls, but otherwise nothing of interest stood out. 
 
 The Upload link was a different story. Clicking on it redirected me to the following error page which informed me that only the admin user could view this page. 
 
-->![](/images/2014-09-10/07.png)<-
+![](/images/2014-09-10/07.png)
 
 The request for this page, as captured by BurpSuite, was the following:
 
@@ -224,15 +224,15 @@ uploadform.php accepted a parameter page that could be set to load up a file cal
 
 One thing that worked was to simply access form.php directly through http://172.16.229.164/forms/form.php. 
 
-->![](/images/2014-09-10/08.png)<-
+![](/images/2014-09-10/08.png)
 
 Although it reported an undefined variable error at the top, it still allowed me to upload any kind of file, provided I filled in all the values. The error message also leaked the location of the website's document root as /var/www. To start off, I created a dummy text file with some content and successfully uploaded it, despite not being logged in as admin. 
 
-->![](/images/2014-09-10/09.png)<-
+![](/images/2014-09-10/09.png)
 
 One thing to note here is that the URL had changed to /application/upload. When I refreshed the page, it gave me an error message saying that the file I was trying to upload already existed. 
 
-->![](/images/2014-09-10/10.png)<-
+![](/images/2014-09-10/10.png)
 
 When I tried to download /application/upload using curl, I got the following response:
 
@@ -256,7 +256,7 @@ It appeared that upload was some kind of CGI script, and it returned the ASCII o
  
 Ok, getting back to having just uploaded a file. Although it was successful, it didn't tell me where the file had been saved to. After going through the list of directories dirb had discovered, I found it in the images directory, along with another file. 
 
-->![](/images/2014-09-10/11.png)<-
+![](/images/2014-09-10/11.png)
 
 Unfortunately these files weren't readable! I found that I could actually upload into the following directories: /var/www/images, /var/www/application, /tmp, /var/tmp, /var/lib/php5. In all cases, none of the files uploaded were readable and therefore unusable. It looked like the only way to get any further was to get admin access. 
 
@@ -264,17 +264,17 @@ I spent a good amount of time trying to bypass authentication on the login scree
 
 First, I couldn't create a user that already existed.
 
-->![](/images/2014-09-10/12.png)<-
+![](/images/2014-09-10/12.png)
 
 Or so it seemed. Upon closer inspection of the login name text field, I noticed that it restricted usernames to a maximum of 16 characters. So I tried a 17 character name to see what would happen. 
 
 I changed the username to superkojiman12345 which was 17 characters and replayed the request. As expected, the account was successfully created.  
 
-->![](/images/2014-09-10/13.png)<-
+![](/images/2014-09-10/13.png)
 
 I then replayed the request again, only this time I changed the password to something different, and surprisingly, the account was successfully created! There were now two users that had the same username superkojiman12345.
 
-->![](/images/2014-09-10/14.png)<-
+![](/images/2014-09-10/14.png)
 
 From here, I knew I had to find a way to trick the server into creating another admin user. At this point my brain must have spazzed out because I spent a good number of hours hammering away at this. What finally worked was to pad the admin username with 11 spaces followed by a newline such that the entire username was 17 characters. 
 
@@ -282,15 +282,15 @@ From here, I knew I had to find a way to trick the server into creating another 
 username=admin%20%20%20%20%20%20%20%20%20%20%20%0a
 ``` 
 
-->![](/images/2014-09-10/15.png)<-
+![](/images/2014-09-10/15.png)
 
 The account was once again successfully created. I returned to the login screen,logged in with my new admin credentials, and sure enough, the web application used the new admin user I created instead of the original one and I finally had admin access. 
 
-->![](/images/2014-09-10/16.png)<-
+![](/images/2014-09-10/16.png)
 
 At this point I wanted to see if my hunch about the local file inclusion vulnerability was true, so I sent the captured request on BurSuite into Repeater, changed forms/form.php into /etc/passwd, and replayed the request. 
 
-->![](/images/2014-09-10/17.png)<-
+![](/images/2014-09-10/17.png)
 
 Brilliant! It worked, and I was able to read /etc/passwd. From that file I identified a user named rmp. Although I could read text files, I was unable to read the actual PHP files. Moreover, I wanted to have a look at the /application/upload CGI script and was unable to read it through this method as well. 
 
@@ -302,7 +302,7 @@ uploadform.php?page=php://filter/convert.base64-encode/resource=/var/www/login.p
 
 Sure enough, this returned a base64 encoded login.php
 
-->![](/images/2014-09-10/18.png)<-
+![](/images/2014-09-10/18.png)
 
 Using this method, I was able to download the upload CGI script with curl. 
 

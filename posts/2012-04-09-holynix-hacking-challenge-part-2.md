@@ -56,7 +56,7 @@ Nmap done: 1 IP address (1 host up) scanned in 32.74 seconds
 
 FTP, SSH, DNS, and HTTP. I pointed my browser to the website to look for anything interesting. It appeared to be registration form with some information about the nameservers used by the site.
 
-->![](/images/2012-04-09/01.png)<-
+![](/images/2012-04-09/01.png)
 
 I decided to run nikto and sqlmap against the site. Unfortunately, nikto didn't find anything promising:
 
@@ -123,7 +123,7 @@ do you want to fill blank fields with random values? [Y/n]
 
 The default level and risk parameters on sqlmap couldn't find any vulnerabilities. I increased the risk and level values to their maximum and tried again, but the results were the same. Thinking that there might be hidden directories on the server, I fired up DirBuster to go through a list of popular directories that may be on the server:
 
-->![](/images/2012-04-09/02.png)<-
+![](/images/2012-04-09/02.png)
 
 I went back to the website and started entering random values on the form to see the behaviour. The form would complain when an email address was improperly formatted, so it was doing some input filtering. I tried entering commands into the username field, including terminating the name with a semicolon, ampersands, pipes, and trying to get other shell commands in there. It seemed however that it would treat the entire username as a string and save it somewhere. At this point, I wasn't sure if it was being saved into a flat file or a database. Entering the same username would result in an error, signifying that the username had already been recorded somewhere.
 
@@ -231,7 +231,7 @@ In order to access each user's site, I had to update /etc/resolv.conf and add 19
 
 I went back to DirBuster to see if it had found any hidden directories. Sure enough, a few interesting ones were discovered:
 
-->![](/images/2012-04-09/03.png)<-
+![](/images/2012-04-09/03.png)
 
 server-status, phpMyAdmin, and setup_guides. Attempting to access these directories resulted in 403 Forbidden errors. I remembered that there was a site called trusted.zincftp.com with IP address 192.168.1.34. I thought that if I used that IP address, I might have special access to these directories. Sure enough, after changing my IP address to 192.168.1.34, I was able to access phpMyAdmin and setup_guides, but not server-status.
 
@@ -241,11 +241,11 @@ Next was the phpMyAdmin directory. This brought me to the phpMyAdmin interface w
 
 Next I clicked on the SQL tab and entered the following to load the contents of purftpd.passwd into the ftp_passwords table:
 
-->![](/images/2012-04-09/04.png)<-
+![](/images/2012-04-09/04.png)
 
 phpMyAdmin replied with "Inserted rows: 31". I checked the contents of ftp_passwords and it contained usernames and encrypted passwords:
 
-->![](/images/2012-04-09/05.png)<-
+![](/images/2012-04-09/05.png)
 
 I exported these into a text file and cleaned up the quotes around the strings. I passed these to john for cracking using a wordlist I obtained from http://contest-2010.korelogic.com/wordlists.html. If I could get one login, I might be able to SSH or FTP into the server.
 

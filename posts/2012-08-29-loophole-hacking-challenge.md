@@ -53,11 +53,11 @@ root mugbear.maximera ~/wargames/loophole
 [+] unicornscan -msf 10.8.7.2:a -l udir/10.8.7.2-tcp.txt
 ```
 
-->![](/images/2012-08-29/01.png)<-
+![](/images/2012-08-29/01.png)
 
 A single hyperlink is visible on the main page. Clicking on it takes us to a status page.
 
-->![](/images/2012-08-29/02.png)<-
+![](/images/2012-08-29/02.png)
 
 From these two pages, we've identified several users:
 
@@ -105,11 +105,11 @@ root mugbear.maximera /pentest/web/nikto
 
 Nikto reports that it's possible to enumerate usernames by using ~username in the URL. We test this with the usernames we've found, and the following usernames return a Forbidden error: mhog, tskies, and jsummer. This indicates that those particular user accounts exist on the server. Additionally, nikto identifes info.php which provides more information about the server, such as the kernel version:
 
-->![](/images/2012-08-29/03.png)<-
+![](/images/2012-08-29/03.png)
 
 Looking at DirBuster, not much had been found:
 
-->![](/images/2012-08-29/04.png)<-
+![](/images/2012-08-29/04.png)
 
 We decide to keep it running in the background and examine the results of onetwopunch.sh:
 
@@ -195,7 +195,7 @@ smb: \>
 
 Doing a bit of Googling, we discover that Samba 3.0.23c is vulnerable to a symlink attack which will allow us to view the contents of the server's root directory. Metasploit's samba_symlink_traversal module was used to exploit this vulnerability:
 
-->![](/images/2012-08-29/05.png)<-
+![](/images/2012-08-29/05.png)
 
 Metasploit successfully creates the symlink. We can verify this with smbclient.
 
@@ -276,7 +276,7 @@ smb: \rootfs\var\www\htdocs\>
 
 Since this file is hosted by the web server, we open it with Firefox and discover UNIX encrypted password hashes, possibly belonging to the server itself:
 
-->![](/images/2012-08-29/06.png)<-
+![](/images/2012-08-29/06.png)
 
 We save this into a file and crack it with john. Using --single, we immediately crack mhog's password, which is mhog:
 
@@ -372,6 +372,6 @@ We transfer the file back to our machine using scp so we can view it later. A fi
 
 Nothing else of interest was found on the server, so finally we open up the Private.doc to complete the mission:
 
-->![](/images/2012-08-29/07.png)<-
+![](/images/2012-08-29/07.png)
 
 This was an easy challenge, and if I had let DirBuster run longer, it would have probably found the garbage file on its own, and I wouldn't have had to discover it by exploiting Samba. In any case, a good beginner's challenge. 
