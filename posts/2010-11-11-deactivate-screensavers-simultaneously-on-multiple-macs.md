@@ -1,11 +1,3 @@
----
-layout: post
-title: "Deactivate screensavers simultaneously on multiple Macs"
-date: 2010-11-11 18:10:26 -0400
-comments: true
-categories: coding
-alias: /2010/11/deactivate-screensavers-simultaneously.html
----
 
 In the [last](/2010/11/10/activate-screensavers-simultaneously-on-multiple-macs)  post I discussed a method for activating screensavers remotely on multiple Macs. Turns out that it's just as much of a hassle to deactivate them, particularly if the screensaver is just meant to hide the desktop and not lock it. If you need to unlock the screen then this script will do you no good.
 

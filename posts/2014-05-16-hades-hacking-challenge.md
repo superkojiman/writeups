@@ -1,11 +1,3 @@
----
-layout: post
-title: "Hades hacking challenge"
-date: 2014-05-16 02:35:09 -0400
-comments: true
-categories: boot2root
----
-
 A few weeks ago, [VulnHub](http://www.vulnhub.com) hosted the Hades [competition](http://blog.vulnhub.com/2014/04/competition-hades.html); a capture the flag challenge created by Lok_Sigma. Hades is touted as a difficult boot2root, requiring some experience in exploit writing and reverse engineering. The competition ran for a good 4 weeks, and with submissions now closed, I've decided to go ahead post my solution. 
 
 <!--more-->

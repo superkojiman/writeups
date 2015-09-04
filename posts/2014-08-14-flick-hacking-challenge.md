@@ -1,11 +1,3 @@
----
-layout: post
-title: "Flick Hacking Challenge"
-date: 2014-08-14 15:04:19 -0400
-comments: true
-categories: boot2root
----
-
 Flick by [leonjza](http://www.twitter.com/leonjza) is a new boot2root available for download at [VulnHub](http://vulnhub.com/entry/flick-1,99/). I had quite a bit of fun with this one, and learned a couple of new things as well; like how I like to do some things the hard way. So without further ado, I'll jump right in and describe how I completed the challenge. 
 
 <!--more-->

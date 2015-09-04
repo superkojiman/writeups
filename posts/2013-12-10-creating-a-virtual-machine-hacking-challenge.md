@@ -1,11 +1,3 @@
----
-layout: post
-title: "Creating a virtual machine hacking challenge"
-date: 2013-12-10 18:10:26 -0400
-comments: true
-categories: howto boot2root
-alias: /2013/12/creating-virtual-machine-hacking.html
----
 
 After recently releasing the [Brainpan 2](/2013/11/19/brainpan-2-hacking-challenge/) hacking challenge, a handful of people asked me for tips on how to create their own hacking challenge. These virtual machine hacking challenges, more commonly known as boot2roots, are relatively easy to make, but cat be somewhat time consuming. In this post, I'd like to share some tips on how to roll out your own boot2root. 
 

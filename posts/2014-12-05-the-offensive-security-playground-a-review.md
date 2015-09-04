@@ -1,11 +1,3 @@
----
-layout: post
-title: "The Offensive Security Playground: A Review"
-date: 2014-12-05 20:19:19 -0500
-comments: true
-categories: musings
----
-
 A couple of years ago I successfully completed the Offensive Security [Pentesting with Backtrack](http://www.offensive-security.com/information-security-training/penetration-testing-with-kali-linux/) (PWB) course, and a year after that, the [Cracking the Perimeter](http://www.offensive-security.com/information-security-training/cracking-the-perimeter/) (CTP) course. Having a huge lab made up of different machines in different subnets to break into is just a great challenge. When I completed the courses, I was a little sadenned that I'd no longer get a chance to poke at the labs. So you can imagine my excitement when I was asked if I'd like to beta test Offensive Security's latest offering; [The Playground](http://www.offensive-security.com/offensive-security-solutions/virtual-penetration-testing-labs/). 
 
 <!--more-->

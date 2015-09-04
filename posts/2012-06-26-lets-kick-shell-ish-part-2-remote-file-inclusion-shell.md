@@ -1,11 +1,3 @@
----
-layout: post
-title: "Let's kick shell-ish, Part 2: Remote File Inclusion shell"
-date: 2012-06-26 18:10:26 -0400
-comments: true
-categories: hacking coding
-alias: /2012/06/lets-kick-shell-ish-part-2-remote-file.html
----
 
 In [Part 1](/2012/06/21/lets-kick-shell-ish-part-1-directory-traversal-made-easy/), we talked about getting a shell-like interface when attacking a target vulnerable to directory traversals. We continue with an article on exploiting Remote File Inclusion (RFI) attacks with a shell.
 

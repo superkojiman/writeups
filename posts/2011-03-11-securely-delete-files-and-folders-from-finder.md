@@ -1,11 +1,3 @@
----
-layout: post
-title: "Securely delete files and folders from Finder"
-date: 2011-03-11 18:10:26 -0400
-comments: true
-categories: howto
-alias: /2011/03/securely-delete-files-and-folders-from.html
----
 
 In the computer world, when you delete a file and empty the Trash or Recycle Bin, it's not really gone. This can be a good thing for when you accidentally delete something critical, or your hard drive crashes and you need to hire professionals to recover these files for you. These files are still recoverable because they're still on the disk, just that you no longer have access to them. However in some cases, you may want to delete a file permanently and ensure that it is unrecoverable. 
 

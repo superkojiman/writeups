@@ -1,11 +1,3 @@
----
-layout: post
-title: "Growl style for Chrome notifications"
-date: 2012-09-29 18:10:26 -0400
-comments: true
-categories: coding
-alias: /2012/09/growl-style-for-chrome-notifications.html
----
 
 I use Chrome's desktop notifications when using Gtalk, and Growl notifications for other applications. I wanted a Growl style that looked like Chrome's desktop notifications, but was unable to find one after combing through Google searches. I finally said "screw it", and decided to make my own.
 

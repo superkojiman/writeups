@@ -1,11 +1,3 @@
----
-layout: post
-title: "Fight scareware: Learn how your anti-virus works"
-date: 2010-03-12
-comments: true
-categories: musings
-alias: /2010/03/fight-scareware-learn-how-your-anti.html
----
 
 [Wikipedia](http://en.wikipedia.org/wiki/Scareware) defines scareware as:
 

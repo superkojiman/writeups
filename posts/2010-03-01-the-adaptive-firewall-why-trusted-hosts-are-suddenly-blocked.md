@@ -1,11 +1,3 @@
----
-layout: post
-title: "The adaptive firewall: Why trusted hosts are suddenly blocked"
-date: 2010-03-01 15:26:09 -0400
-comments: true
-categories: musings
-alias: /2010/03/adaptive-firewall-why-trusted-hosts-are.html
----
 
 Leopard Server and Snow Leopard Server have feature called an adaptive firewall (af). When the system detects
 several failed login attempts from the same IP address, the af kicks in and blocks the offending IP address for 15

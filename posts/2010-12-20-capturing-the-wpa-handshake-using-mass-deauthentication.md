@@ -1,11 +1,3 @@
----
-layout: post
-title: "Capturing the WPA handshake using mass deauthentication"
-date: 2010-12-20 18:10:26 -0400
-comments: true
-categories: coding howto hacking
-alias: /2010/12/capturing-wpa-handshake-using-mass.html
----
 
 Capturing the 4-way handshake required to crack WPA-PSK can be a bit frustrating when you can't get a client to deauthenticate and reauthenticate with the access point. One option is to deauthenticate all the clients by not providing the client's MAC address when running the deauthentication attack:
 

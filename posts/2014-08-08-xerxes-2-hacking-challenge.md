@@ -1,11 +1,3 @@
----
-layout: post
-title: "Xerxes 2 Hacking Challenge"
-date: 2014-08-08 14:59:52 -0400
-comments: true
-categories: boot2root
----
-
 
 Another month, another hacking challenge! This time it's Xerxes 2 by [barrebas](https://twitter.com/barrebas). This boot2root promised some challenges and it definitely delivered. Xerxes 1 was a lot of fun, and when Xerxes 2 was announced, I was looking forward to getting my hands dirty. As with other boot2roots, you can download a copy of Xerxes 2 at [VulnHub](http://vulnhub.com/entry/xerxes-2,97/)
 

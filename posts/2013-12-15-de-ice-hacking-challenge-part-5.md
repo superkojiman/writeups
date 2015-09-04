@@ -1,11 +1,3 @@
----
-layout: post
-title: "De-ICE hacking challenge: Part 5"
-date: 2013-12-15 18:10:26 -0400
-comments: true
-categories: boot2root
-alias: /2013/12/de-ice-hacking-challenge-part-5.html
----
 
 This is a walkthrough for the De-ICE S1.120-1 B challenge, which can be downloaded here: [http://vulnhub.com/entry/de-ice_s1120-b,11/](http://vulnhub.com/entry/de-ice_s1120-b,11/). The author describes this challenge as "moderately difficult". Itching for a good challenge, I decided to see if it lived up to its difficulty level. 
 

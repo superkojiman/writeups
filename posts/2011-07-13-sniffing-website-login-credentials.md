@@ -1,11 +1,3 @@
----
-layout: post
-title: "Sniffing website login credentials"
-date: 2011-07-13 18:10:26 -0400
-comments: true
-categories: howto hacking
-alias: /2011/07/sniffing-website-login-credentials.html
----
 
 Man-in-the-middle (MITM) attacks are an effective way to capture data flowing between a target and the router. In a nutshell, the attacker places himself between the target and the router so that all data flows through the attacker's machine. The target thinks he's communicating with the router, and the router thinks it's communicating with the target, when in reality, they are communicating with the attacker and the attacker just relays the information back and forth. It's like a malicious mailman who reads your letters before sealing them and sending them off. 
 

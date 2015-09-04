@@ -1,11 +1,3 @@
----
-layout: post
-title: "Bypassing MAC filters on WiFi networks"
-date: 2010-12-21 18:10:26 -0400
-comments: true
-categories: coding howto hacking
-alias: /2010/12/bypassing-mac-filters-on-wifi-networks.html
----
 
 Most wireless routers have a security feature called MAC filtering. Each network card on a computer comes with a unique MAC address. MAC filtering allows the user to specify which computers are allowed to use the wireless network by entering the computer's MAC address into the whitelist. This is a security tip that I see often when reading about securing wireless networks. When used by itself, or with WEP, it can give the user a false sense of security. I'm going to show you how this security layer can be bypassed.
 

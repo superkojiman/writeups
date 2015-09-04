@@ -1,11 +1,3 @@
----
-layout: post
-title: "Creating a user name list for brute force attacks"
-date: 2011-07-17 18:10:26 -0400
-comments: true
-categories: howto hacking
-alias: /2011/07/creating-user-name-list-for-brute-force.html
----
 
 If you need to do a brute force attack against a particular service, you'll need a couple of things. A good wordlist containing possible passwords, and a list of user names to try. It's easy to get a password list on the Internet, but user lists often have to be customized for the target. You'll need to do some research to find email addresses and employee names. Once you do have a list of names however, you'll need to guess what the format of the login ID is for that user. John Doe could be johndoe, or john.doe, or jdoe, and so on. 
 

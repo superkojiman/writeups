@@ -1,11 +1,3 @@
----
-layout: post
-title: "Knock-Knock Hacking Challenge"
-date: 2014-10-15 21:36:57 -0400
-comments: true
-categories: boot2root
----
-
 For the last few weeks I had immersed myself in several CTFs with team VulnHub. It was a nice change to return to boot2roots after tackling small and difficult challenges. This time round, it's Knock-Knock by [zer0w1re](http://twitter.com/@zerowire). Much like other boot2roots, the goal is to get root, and find the flag. As always, head over to [VulnHub](http://vulnhub.com/entry/knock-knock-11,105/) to download it and have a go. 
 
 <!--more--> 

@@ -1,11 +1,3 @@
----
-layout: post
-title: "Let's kick shell-ish, part 1: Directory traversal made easy"
-date: 2012-06-21 18:10:26 -0400
-comments: true
-categories: hacking coding
-alias: /2012/06/lets-kick-shell-ish-part-1-directory.html
----
 
 Web applications that are vulnerable to directory traversals offer a small window into viewing the contents of a target server. In a way, you've semi-penetrated the system, albeit with minimal privileges, mostly just reading files. However, that's not necessarily a bad thing. Being able to read /etc/passwd for instance will give you an idea of what user accounts are on the system, thereby aiding in a brute force attack. If you can read the contents of C:\Windows\repair\sam and C:\Windows\repair\system, you can download those files and start cracking Windows passwords.
 

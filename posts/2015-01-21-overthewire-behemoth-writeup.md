@@ -1,11 +1,3 @@
----
-layout: post
-title: "OverTheWire: Behemoth Writeup"
-date: 2015-01-21 08:22:57 -0500
-comments: true
-categories: wargames
----
-
 While killing time waiting for the next CTF, a handful of us from [Team VulnHub](https://ctf-team.vulnhub.com) decided to have a go at OverTheWire's Behemoth challenges. I hadn't played Behemoth before and found it pretty fun. The game is described as:
 
 > This wargame deals with a lot of regular vulnerabilities found commonly 'out in the wild'. While the game makes no attempts at emulating a real environment it will teach you how to exploit several of the most common coding mistakes including buffer overflows, race conditions and privilege escalation.  

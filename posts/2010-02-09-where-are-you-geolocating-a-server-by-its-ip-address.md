@@ -1,11 +1,3 @@
----
-layout: post
-title: "Where are you?: Geolocating a server by its IP address"
-date: 2010-02-09 14:12:12 -0400
-comments: true
-categories: coding hacking
-alias: /2010/02/where-are-you-geolocating-server-by-its.html
----
 
 I often see IP addresses in log files on my servers and wonder where they might be coming from. Tools such as
 traceroute and whois are great when you need to dig further, But if you just want a quick answer to the question

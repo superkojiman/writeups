@@ -1,11 +1,3 @@
----
-layout: post
-title: "De-ICE hacking challenge: Part 4"
-date: 2013-12-13 18:10:26 -0400
-comments: true
-categories: boot2root
-alias: /2013/12/de-ice-hacking-challenge-part-4.html
----
 
 This is a quick walkthrough on solving the De-ICE S1.120 A challenge which can be downloaded here: [http://vulnhub.com/entry/de-ice_s1120-a,10/](http://vulnhub.com/entry/de-ice_s1120-a,10/). Interestingly, I wasn't aware that this boot2root even existed until a couple of nights ago when someone mentioned it on IRC. After doing a bit of searching, it turns out there are at least three that I haven't had a go at popping. So with that in mind, I decided to load up S1.120 A and take the challenge. 
 

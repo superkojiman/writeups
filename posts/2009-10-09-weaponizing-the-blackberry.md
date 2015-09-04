@@ -1,11 +1,3 @@
----
-layout: post
-title: "Weaponizing the Blackberry"
-date: 2009-10-09 18:14:37 -0400
-comments: true
-categories: hacking coding
-alias: /2009/10/weaponizing-blackberry-part-1.html
----
 
 I recently purchased a Blackberry on eBay. I needed a new phone and I
 thought a smartphone might be nice to play with. The Blackberry Pearl 8120

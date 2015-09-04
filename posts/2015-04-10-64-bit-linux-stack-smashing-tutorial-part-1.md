@@ -1,11 +1,3 @@
----
-layout: post
-title: "64-bit Linux Stack Smashing Tutorial: Part 1"
-date: 2015-04-10 12:44:11 -0400
-comments: true
-categories: howto hacking
----
-
 This series of tutorials is aimed as a quick introduction to exploiting buffer overflows on 64-bit Linux binaries. It's geared primarily towards folks who are already familiar with exploiting 32-bit binaries and are wanting to apply their knowledge to exploiting 64-bit binaries. This tutorial is the result of compiling scattered notes I've collected over time into a cohesive whole. 
 
 <!-- more --> 

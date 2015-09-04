@@ -1,11 +1,3 @@
----
-layout: post
-title: "Leaving Blogger and moving to GitHub Pages"
-date: 2014-04-24 12:59:46 -0400
-comments: true
-categories: musings
-alias: /2014/04/leaving-blogger-and-moving-to-github.html
----
 
 My first post on Blogger was on October 9, 2009. It's been a good run, and I've enjoyed using Blogger for quickly sharing things with the Internet. For various reason, I've grown tired of Blogger, and I've decided to migrate over to GitHub Pages. Making the transfer took a bit of time and trial and error. Octopress made the migration relatively simple and so far, I'm pretty happy with the results. 
 

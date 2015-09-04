@@ -1,11 +1,3 @@
----
-layout: post
-title: "Birthday code cake"
-date: 2010-07-26 02:35:09 -0400
-comments: true
-categories: musings coding
-alias: /2010/07/birthday-code-cake.html
----
 
 For my friend's birthday I decided to give him something geeky. Birthday code cake. It won't win any obfuscated C contests, but it works and was done in short notice.
 

@@ -1,11 +1,3 @@
----
-layout: post
-title: "Loophole hacking challenge"
-date: 2012-08-29 18:10:26 -0400
-comments: true
-categories: boot2root
-alias: /2012/08/loophole-hacking-challenge.html
----
 
 Loophole is another wargame, created by Beller0ph0n and released at the HackingDojo forums. The image itself can be downloaded from [http://vulnhub.com](http://vulnhub.com/entry/loophole_1,27/). I'm rating this one as a beginner challenge.
 

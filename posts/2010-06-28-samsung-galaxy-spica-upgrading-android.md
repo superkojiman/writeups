@@ -1,11 +1,3 @@
----
-layout: post
-title: "Samsung Galaxy Spica: Upgrading Android 1.5 to 2.1"
-date: 2010-06-28 02:35:09 -0400
-comments: true
-categories: howto
-alias: /2010/06/samsung-galaxy-spica-upgrading-android.html
----
 
 About two months ago I decided I was tired of my Blackberry and wanted something a lot more fun, so I started hunting around for an Android phone. I purchased the [Samsung Galaxy Spica](http://www.samsung.com/ie/consumer/mobile-phones/mobile-phones/touch-screen/GT-I5700UWAXEU/index.idx?pagetype=prd_detail) off of eBay for about USD $300. The device came with Android 1.5 (Cupcake). It wasn't long before I started looking for ways to upgrade it to 2.1 (Eclair). 
 

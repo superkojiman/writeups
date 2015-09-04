@@ -1,11 +1,3 @@
----
-layout: post
-title: "Relativity hacking challenge"
-date: 2013-12-12 18:10:26 -0400
-comments: true
-categories: boot2root
-alias: /2013/12/relativity-hacking-challenge.html
----
 
 Several weeks ago, [Sagi](http://vulnhub.com/author/sagi,36/) released his own challenge named Relativity to the public. It had been a while since I'd done a good boot2root, and so eager for a challenge, I grabbed it off [VulnHub](http://vulnhub.com/entry/devrandom_relativity,55/) and loaded it into VMware.
 

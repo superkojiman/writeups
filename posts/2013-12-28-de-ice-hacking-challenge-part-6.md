@@ -1,11 +1,3 @@
----
-layout: post
-title: "De-ICE hacking challenge: Part 6"
-date: 2013-12-28 02:35:09 -0400
-comments: true
-categories: boot2root
-alias: /2013/12/de-ice-hacking-challenge-part-6.html
----
 
 This is a walkthrough on De-ICE S1.140, available for download at [VulnHub](http://vulnhub.com/entry/de-ice_s1140,57/). This release was much anticipated and took a while to get released to the public. It's a little tougher than the previous De-ICE challenges, but uses a similar formula of password cracking and guessing. 
 

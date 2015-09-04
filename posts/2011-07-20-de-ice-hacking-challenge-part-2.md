@@ -1,11 +1,3 @@
----
-layout: post
-title: "De-ICE hacking challenge: Part 2"
-date: 2011-07-20 18:10:26 -0400
-comments: true
-categories: boot2root hacking
-alias: /2011/07/de-ice-hacking-challenge-part-2.html
----
 
 In my previous [post](/2011/07/19/de-ice-hacking-challenge-part-1/) I talked about how I completed part 1 of the De-ICE hacking challenge. If you're not sure what De-ICE is, I recommend reading my last post and checking out [HackingDojo](http://hackingdojo.com/pentest-media/), home of the De-ICE penetration testing Live CDs. 
 

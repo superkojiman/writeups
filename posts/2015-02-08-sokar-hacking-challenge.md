@@ -1,11 +1,3 @@
----
-layout: post
-title: "Sokar Hacking Challenge"
-date: 2015-02-08 02:14:53 -0500
-comments: true
-categories: boot2root
----
-
 To commemorate their second birthday, [VulnHub](https://www.vulnhub.com) is holding another competition with the promise of prizes for those who are chosen as winners! The challenge is Sokar; a nefarious boot2root created by [rasta_mouse](https://twitter.com/_RastaMouse) which features a nice balance of frustration and satisfaction. For more details about the competition, head over to VulnHub's [blog post](http://blog.vulnhub.com/2015/01/competition-sokar.html). I spent a couple of hours each evening after work to poke away at Sokar until I finally solved it. This post contains my walkthrough.
 
 <!-- more --> 

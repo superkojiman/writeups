@@ -1,11 +1,3 @@
----
-layout: post
-title: "Rooting the Samsung Galaxy Spica"
-date: 2010-12-03 18:10:26 -0400
-comments: true
-categories: howto
-alias: /2010/12/rooting-samsung-galaxy-spica.html
----
 
 Finally got around to doing this. I'm writing this guide as a future reference in case I need to do this again. First you need to upgrade to Android 2.1, so follow the instructions in: [Samsung Galaxy Spica: Upgrading Android 1.5 to 2.1](/2010/06/28/samsung-galaxy-spica-upgrading-android). 
 

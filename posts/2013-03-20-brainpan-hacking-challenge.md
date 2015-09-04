@@ -1,11 +1,3 @@
----
-layout: post
-title: "Brainpan hacking challenge"
-date: 2013-03-20 18:10:26 -0400
-comments: true
-categories: boot2root
-alias: /2013/03/brainpan-hacking-challenge.html
----
 
 After attempting various hacking challenges, I was inspired to come up with my own. Brainpan is my attempt at a vulnerable virtual machine. Your goal is to break in and get root access. 
 

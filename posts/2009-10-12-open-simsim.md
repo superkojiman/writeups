@@ -1,11 +1,3 @@
----
-layout: post
-title: "Open, Simsim!"
-date: 2009-10-12 20:27:05 -0400
-comments: true
-categories: hacking coding
-alias: /2009/10/open-simsim_12.html
----
 
 There've been a few times where I've found myself in need of a default username/password for a wireless router that has been factory reset, or was just improperly configured. Going through manufacturer websites searching for the manuals and the information can be a pain. 
 

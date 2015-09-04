@@ -1,11 +1,3 @@
----
-layout: post
-title: "VulnImage hacking challenge"
-date: 2012-08-27 18:10:26 -0400
-comments: true
-categories: boot2root
-alias: /2012/08/vulnimage-hacking-challenge.html
----
 
 Another virtual machine hacking challenge! This one is called vulnimage and can be downloaded from http://vulnhub.com This one is a little more advanced, requiring the attacker to craft a custom exploit to root the server. Give it a go if you're interested in exploit development.
 
