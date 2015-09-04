@@ -19,10 +19,10 @@
 * [From fuzzing to 0-day](posts/2014-05-14-from-fuzzing-to-0-day.md)
 * [Multi-Factor Authentication with SSH on OS X](posts/2014-05-09-multi-factor-authentication-with-ssh-on-os-x.md)
 * [Leaving Blogger and moving to GitHub Pages](posts/2014-04-24-leaving-blogger-and-moving-to-github-pages.md)
-* [Kioptrix hacking challenge](posts/2014-04-08-kioptrix-hacking-challenge-part-5.md)
-* [De-ICE hacking challenge](posts/2013-12-28-de-ice-hacking-challenge-part-6.md)
-* [De-ICE hacking challenge](posts/2013-12-15-de-ice-hacking-challenge-part-5.md)
-* [De-ICE hacking challenge](posts/2013-12-13-de-ice-hacking-challenge-part-4.md)
+* [Kioptrix hacking challenge: Part 5](posts/2014-04-08-kioptrix-hacking-challenge-part-5.md)
+* [De-ICE hacking challenge: Part 6](posts/2013-12-28-de-ice-hacking-challenge-part-6.md)
+* [De-ICE hacking challenge: Part 5](posts/2013-12-15-de-ice-hacking-challenge-part-5.md)
+* [De-ICE hacking challenge: Part 4](posts/2013-12-13-de-ice-hacking-challenge-part-4.md)
 * [Relativity hacking challenge](posts/2013-12-12-relativity-hacking-challenge.md)
 * [Creating a virtual machine hacking challenge](posts/2013-12-10-creating-a-virtual-machine-hacking-challenge.md)
 * [Brainpan 2 contest winner](posts/2013-12-09-brainpan-2-contest-winner.md)
@@ -40,28 +40,18 @@
 * [Thoughts on Offensive Security's Penetration Testing with Backtrack course](posts/2012-09-05-thoughts-on-offensive-securitys-penetration-testing-with-backtrack-course.md)
 * [Loophole hacking challenge](posts/2012-08-29-loophole-hacking-challenge.md)
 * [VulnImage hacking challenge](posts/2012-08-27-vulnimage-hacking-challenge.md)
-* [Kioptrix hacking challenge](posts/2012-07-16-kioptrix-hacking-challenge-part-3.md)
-Site doesn't have a title (text/html; charset=UTF-8).](posts/2012-07-06-kioptrix-hacking-challenge-part-2.md)
-Site doesn't have a title (text/html; charset=UTF-8).
-* [Kioptrix hacking challenge
-Test Page for the Apache Web Server on Red Hat Linux](posts/2012-07-04-kioptrix-hacking-challenge-part-1.md)
-Test Page for the Apache Web Server on Red Hat Linux
-* [Kioptrix hacking challenge
+* [Kioptrix hacking challenge: Part 3](posts/2012-07-16-kioptrix-hacking-challenge-part-3.md)
+* [Kioptrix hacking challenge: Part 2](posts/2012-07-06-kioptrix-hacking-challenge-part-2.md)
+* [Kioptrix hacking challenge: Part 1](posts/2012-07-04-kioptrix-hacking-challenge-part-1.md)
 * [Let's kick shell-ish, Part 2](posts/2012-06-26-lets-kick-shell-ish-part-2-remote-file-inclusion-shell.md)
 * [Let's kick shell-ish, part 1](posts/2012-06-21-lets-kick-shell-ish-part-1-directory-traversal-made-easy.md)
 * [Port scanning one, two punch](posts/2012-05-31-port-scanning-one-two-punch.md)
 * [Wireshark OS X](posts/2012-05-16-wireshark-os-x-disappearing-menu-items-fix.md)
 * [Staying anonymous in a social Internet](posts/2012-04-11-staying-anonymous-in-a-social-internet.md)
-ZincFTP](posts/2012-04-09-holynix-hacking-challenge-part-2.md)
-* [Holynix hacking challenge
-Site doesn't have a title (text/html).](posts/2012-04-07-holynix-hacking-challenge-part-1.md)
-* [Holynix hacking challenge
-Site doesn't have a title (text/html).](posts/2011-08-01-de-ice-hacking-challenge-part-3.md)
-* [De-ICE hacking challenge
-Site doesn't have a title (text/html).](posts/2011-07-20-de-ice-hacking-challenge-part-2.md)
-* [De-ICE hacking challenge
-Site doesn't have a title (text/html).](posts/2011-07-19-de-ice-hacking-challenge-part-1.md)
-* [De-ICE hacking challenge
+* [Holynix hacking challenge: Part 2](posts/2012-04-09-holynix-hacking-challenge-part-2.md)
+* [Holynix hacking challenge: Part 1](posts/2012-04-07-holynix-hacking-challenge-part-1.md)
+* [De-ICE hacking challenge: Part 2](posts/2011-07-20-de-ice-hacking-challenge-part-2.md)
+* [De-ICE hacking challenge: Part 1](posts/2011-07-19-de-ice-hacking-challenge-part-1.md)
 * [Creating a user name list for brute force attacks](posts/2011-07-17-creating-a-user-name-list-for-brute-force-attacks.md)
 * [Setting up a malicious wireless access point](posts/2011-07-15-setting-up-a-malicious-wireless-access-point.md)
 * [Sniffing website login credentials](posts/2011-07-13-sniffing-website-login-credentials.md)
