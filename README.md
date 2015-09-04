@@ -50,6 +50,7 @@
 * [Staying anonymous in a social Internet](posts/2012-04-11-staying-anonymous-in-a-social-internet.md)
 * [Holynix hacking challenge: Part 2](posts/2012-04-09-holynix-hacking-challenge-part-2.md)
 * [Holynix hacking challenge: Part 1](posts/2012-04-07-holynix-hacking-challenge-part-1.md)
+* [De-ICE hacking challenge: Part 3](posts/2011-08-01-de-ice-hacking-challenge-part-3.md)
 * [De-ICE hacking challenge: Part 2](posts/2011-07-20-de-ice-hacking-challenge-part-2.md)
 * [De-ICE hacking challenge: Part 1](posts/2011-07-19-de-ice-hacking-challenge-part-1.md)
 * [Creating a user name list for brute force attacks](posts/2011-07-17-creating-a-user-name-list-for-brute-force-attacks.md)
