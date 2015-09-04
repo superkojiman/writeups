@@ -49,7 +49,7 @@
  * [Kioptrix hacking challenge: Part 2](posts/2012-07-06-kioptrix-hacking-challenge-part-2.md)
  * [Kioptrix hacking challenge: Part 1](posts/2012-07-04-kioptrix-hacking-challenge-part-1.md)
  * [Let's kick shell-ish, Part 2](posts/2012-06-26-lets-kick-shell-ish-part-2-remote-file-inclusion-shell.md)
- * [Let's kick shell-ish, part 1](posts/2012-06-21-lets-kick-shell-ish-part-1-directory-traversal-made-easy.md)
+ * [Let's kick shell-ish, Part 1](posts/2012-06-21-lets-kick-shell-ish-part-1-directory-traversal-made-easy.md)
  * [Port scanning one, two punch](posts/2012-05-31-port-scanning-one-two-punch.md)
  * [Wireshark OS X](posts/2012-05-16-wireshark-os-x-disappearing-menu-items-fix.md)
  * [Staying anonymous in a social Internet](posts/2012-04-11-staying-anonymous-in-a-social-internet.md)
