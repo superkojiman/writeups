@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "OverTheWire: Behemoth Writeup"
+title: "OverTheWire: Behemoth writeup"
 date: 2015-01-21 08:22:57 -0500
 comments: true
 categories: wargames

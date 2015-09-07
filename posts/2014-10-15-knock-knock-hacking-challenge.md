@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Knock-Knock Hacking Challenge"
+title: "Knock-Knock hacking challenge"
 date: 2014-10-15 21:36:57 -0400
 comments: true
 categories: boot2root

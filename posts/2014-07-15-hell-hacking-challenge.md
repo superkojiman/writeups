@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Hell Hacking Challenge"
+title: "Hell hacking challenge"
 date: 2014-07-15 13:27:03 -0400
 comments: true
 categories: boot2root

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Flick Hacking Challenge"
+title: "Flick hacking challenge"
 date: 2014-08-14 15:04:19 -0400
 comments: true
 categories: boot2root

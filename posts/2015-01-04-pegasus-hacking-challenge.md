@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Pegasus Hacking Challenge"
+title: "Pegasus hacking challenge"
 date: 2015-01-04 01:17:05 -0500
 comments: true
 categories: boot2root

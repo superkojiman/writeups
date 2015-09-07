@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Offensive Security Playground: A Review"
+title: "The Offensive Security Playground: A review"
 date: 2014-12-05 20:19:19 -0500
 comments: true
 categories: musings

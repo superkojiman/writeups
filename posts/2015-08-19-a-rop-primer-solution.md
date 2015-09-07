@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A ROP Primer Solution"
+title: "A ROP Primer solution"
 date: 2015-08-19 14:42:43 -0400
 comments: true
 categories: boot2root

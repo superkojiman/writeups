@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "NullByte 0x01 Hacking Challenge"
+title: "NullByte 0x01 hacking challenge"
 date: 2015-08-06 00:27:34 -0400
 comments: true
 categories: boot2root

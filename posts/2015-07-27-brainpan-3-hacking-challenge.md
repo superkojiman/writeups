@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Brainpan 3 Hacking Challenge"
+title: "Brainpan 3 hacking challenge"
 date: 2015-07-27 00:15:37 -0400
 comments: true
 categories: boot2root

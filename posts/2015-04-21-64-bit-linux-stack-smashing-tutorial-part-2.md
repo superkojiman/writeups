@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "64-bit Linux Stack Smashing Tutorial: Part 2"
+title: "64-bit Linux stack smashing tutorial: Part 2"
 date: 2015-04-21 08:35:12 -0400
 comments: true
 categories: howto hacking

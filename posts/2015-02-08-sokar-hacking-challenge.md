@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Sokar Hacking Challenge"
+title: "Sokar hacking challenge"
 date: 2015-02-08 02:14:53 -0500
 comments: true
 categories: boot2root

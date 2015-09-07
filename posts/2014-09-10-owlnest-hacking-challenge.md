@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "OwlNest Hacking Challenge"
+title: "OwlNest hacking challenge"
 date: 2014-09-10 16:06:59 -0400
 comments: true
 categories: boot2root
