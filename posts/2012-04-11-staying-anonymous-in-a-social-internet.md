@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Staying anonymous in a social Internet"
+date: 2012-04-11 18:10:26 -0400
+comments: true
+categories: musings
+alias: /2012/04/staying-anonymous-in-social-internet.html
+---
 
 There are legitimate reasons for wanting to stay anonymous online. You don't have to be living in an oppressed country, or be a criminal, or an activist. Sometimes you just don't want Facebook or Twitter to know where you're connecting from.
 

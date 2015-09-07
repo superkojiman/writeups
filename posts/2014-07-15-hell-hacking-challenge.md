@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Hell Hacking Challenge"
+date: 2014-07-15 13:27:03 -0400
+comments: true
+categories: boot2root
+---
+
 One of the latest and more challenging boot2roots released on [VulnHub](http://www.vulnhub.com) as of late is [Hell](http://vulnhub.com/entry/hell-1,95/). This boot2root by [Peleus](http://www.twitter.com/0x42424242) has appeared to cause quite a bit of hair pulling and teeth gnashing whenever it's mentioned on IRC. I initially started off with his beta version but had to put it away when I got too busy with work. When I was finally ready to try again, the official version had been released, so I downloaded it and started over. 
 
 <!--more-->

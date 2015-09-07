@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Brainpan 2 hacking challenge"
+date: 2013-11-19 18:10:26 -0400
+comments: true
+categories: boot2root
+alias: /2013/11/brainpan-2-hacking-challenge.html
+---
 
 When I initially created [Brainpan](/2013/03/20/brainpan-hacking-challenge/), my intent was to give back to the community with something fun and challenging. It didn't occur to me that others would find it so enjoyable that they would want more. I had a blast creating the first challenge, and so I thought, "What the hey, let's create a second one!". And so I present, Brainpan 2. Your goal is to break into the server and read the contents of /root/flag.txt 
 

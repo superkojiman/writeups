@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Binary to shellcode"
+date: 2013-03-02 18:10:26 -0400
+comments: true
+categories: howto coding
+alias: /2013/03/binary-to-shellcode.html
+---
 
 The other day I was working on a Windows machine and downloaded a small Windows bind shellcode from [https://code.google.com/p/w32-bind-ngs-shellcode/](https://code.google.com/p/w32-bind-ngs-shellcode/). I wanted to extract the shellcode from the bin file and pop it into my exploit. On Linux, this can be done with the following: 
 

@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Setting up a malicious wireless access point"
+date: 2011-07-15 18:10:26 -0400
+comments: true
+categories: howto hacking
+alias: /2011/07/setting-up-malicious-wireless-access.html
+---
 
 It can be tempting to hop onto an open wireless network when you just need to check your email, or you want to send off a tweet. Stop for a moment though, because an open wireless network might not be as safe as you think. With the right tools, an attacker can turn his laptop into an open wireless access point that captures your online activity. 
 

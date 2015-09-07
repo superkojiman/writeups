@@ -1,3 +1,11 @@
+---
+layout: post
+title: "A ROP Primer Solution"
+date: 2015-08-19 14:42:43 -0400
+comments: true
+categories: boot2root
+---
+
 So a while back, [barrebas](https://twitter.com/barrebas) from our [VulnHub CTF Team](https://ctf-team.vulnhub.com) decided to give us a primer on Return Oriented Programming (ROP). It was a great session and he went on to give the workshop at BSides London, which I hear was well received. Anyway, to accompany the workshop, he created a VM challenge containing three binaries that you get to practice exploiting using ROP. I meant to do this ages ago, but procrastination, plus CTFs, plus work kind of put it on the shelf. So finally, I got bits of free time to work on it and here's my writeup on the challenges. 
 
 <!--more-->

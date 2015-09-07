@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Kioptrix hacking challenge: Part 1"
+date: 2012-07-04 18:10:26 -0400
+comments: true
+categories: boot2root
+alias: /2012/07/kioptrix-hacking-challenge-part-1.html
+---
 
 Kioptrix is another set of virtual machines that are intended to be hacked into. As of this writing there are currently four Kioptrix challenges. Each one increases in difficulty and is a good start for someone new to penetration testing. Towards the end of last April, I started playing around with it and documented the steps to exploit it. Kioptrix 1 is geared towards the beginner, and is one of the easiest challenges out there.
 

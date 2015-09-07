@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Two-factor authentication for the rest of us"
+date: 2009-10-14 22:59:11 -0400
+comments: true
+categories: howto
+alias: /2009/10/two-factor-authentication-for-rest-of.html
+---
 
 Encryption is a great way to protect your data. Generally you select some awesome algorithm, pick a passphrase and encrypt your data. When you want to access your data, you decrypt it using the passphrase. 
 

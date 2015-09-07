@@ -1,3 +1,11 @@
+---
+layout: post
+title: "64-bit Linux Stack Smashing Tutorial: Part 2"
+date: 2015-04-21 08:35:12 -0400
+comments: true
+categories: howto hacking
+---
+
 This is part 2 of my 64-bit Linux Stack Smashing tutorial. In [part 1](/2015/04/10/64-bit-linux-stack-smashing-tutorial-part-1/) we exploited a 64-bit binary using a classic stack overflow and learned that we can't just blindly expect to overwrite RIP by spamming the buffer with bytes. We turned off ASLR, NX, and stack canaries in part 1 so we could focus on the exploitation rather than bypassing these security  features. This time we'll enable NX and look at how we can exploit the same binary using ret2libc.
 
 <!-- more -->

@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Kioptrix hacking challenge: Part 3"
+date: 2012-07-16 18:10:26 -0400
+comments: true
+categories: boot2root
+alias: /2012/07/kioptrix-hacking-challenge-part-3.html
+---
 
 The third Kioptrix challenge is level 1.2, which can be downloaded from [http://www.kioptrix.com/blog/?page_id=135](http://www.kioptrix.com/blog/?page_id=135). This challenge is definitely a bit more involved than the first two. When the Kioptrix VM starts up, it informs us that /etc/hosts file should be modified to map the Kioptrix IP address to kioptrix3.com
 

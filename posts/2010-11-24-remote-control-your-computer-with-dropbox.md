@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Remote control your computer with Dropbox"
+date: 2010-11-24 18:10:26 -0400
+comments: true
+categories: howto coding
+alias: /2010/11/remote-control-your-computer-with.html
+---
 
 [Dropbox](https://www.dropbox.com) is a service that allows you to sync files and folders on multiple computers. It does this by syncing the files and folders to the Dropbox server and then syncing them to any other device (computers or smartphones) that you may have installed Dropbox on. Its primary purpose is to ensure that any files in your Dropbox folder are immediately accessible to any other device that you have installed Dropbox on. We can take advantage of this syncing feature and use it as a means to transfer instructions from one device to another. Here's a basic example of using a smartphone to tell a computer (the target) to print out some documents. 
 

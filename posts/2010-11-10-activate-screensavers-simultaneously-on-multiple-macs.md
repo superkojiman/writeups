@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Activate screensavers simultaneously on multiple Macs"
+date: 2010-11-10 18:10:26 -0400
+comments: true
+categories: coding
+alias: /2010/11/activate-screensavers-simultaneously-on.html
+---
 
 My work setup in the lab consists of two Mac Minis, one Mac Pro, and my Macbook Pro. I do all my typing on my Macbook and use [teleport](http://www.abyssoft.com/software/teleport/) to remotely control the other computers. Whenever I leave my desk, I make it a habit to lock all my computers using the screensaver. It has become a bit of a pain to do this manually, so I came up with a way to lock all my computers with a single command from my Macbook. 
 

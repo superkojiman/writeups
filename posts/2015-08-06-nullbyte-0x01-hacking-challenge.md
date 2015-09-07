@@ -1,3 +1,11 @@
+---
+layout: post
+title: "NullByte 0x01 Hacking Challenge"
+date: 2015-08-06 00:27:34 -0400
+comments: true
+categories: boot2root
+---
+
 I saw this boot2root announced on [Twitter](https://twitter.com/ly0nx/status/627625979041697792) by [ly0nx](https://twitter.com/ly0nx) and decided to give it a go. It's not on VulnHub yet, but it looks like it might make it there sometime after Blackhat and Defcon is over. The boot2root is called NullByte 0x01 and is described as beginner/intermediate level challenge. I thought it was pretty easy, but still a fun challenge nonetheless. You can grab it at [http://ly0n.me/2015/08/01/nullbyte-challenge-0x01/](http://ly0n.me/2015/08/01/nullbyte-challenge-0x01/).
 
 <!--more-->

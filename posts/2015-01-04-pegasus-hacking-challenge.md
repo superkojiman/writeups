@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Pegasus Hacking Challenge"
+date: 2015-01-04 01:17:05 -0500
+comments: true
+categories: boot2root
+---
+
 Happy 2015! With the holidays and merry making out of the way, it was time to resume hacking boot2roots and CTFs. To start off the new year is Pegasus, by [TheKnapsy](https://twitter.com/TheKnapsy). I actually started this challenge a week before Christmas, but after getting a foothold on the target, I put it on hold to prepare for the holidays and unplug for a few days. Today I finally got around to loading it up again and finishing it off. I recommend having a go at it, so grab it from [VulnHub](https://www.vulnhub.com/entry/pegasus-1,109/). 
 
 <!--more--> 

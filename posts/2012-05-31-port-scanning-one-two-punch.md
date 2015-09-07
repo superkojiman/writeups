@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Port scanning one, two punch"
+date: 2012-05-31 18:10:26 -0400
+comments: true
+categories: hacking coding
+alias: /2012/05/port-scanning-one-two-punch.html
+---
 
 Information gathering is an important step in a penetration test, or any hack attempt. Various attack vectors open up based on the findings in the information gathering stage. Port scanning provides a large amount of information on open services and possible exploits that target these services. The problem with port scanning is that it can take a lot of time to generate the results depending on the type of scan, the protocol that's being scanned, the number of targets, whether or not any IDS is in the way, and a slew of other variables.
 

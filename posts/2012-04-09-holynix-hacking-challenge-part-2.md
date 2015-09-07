@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Holynix hacking challenge: Part 2"
+date: 2012-04-09 18:10:26 -0400
+comments: true
+categories: boot2root hacking
+alias: /2012/04/holynix-hacking-challenge-part-2_09.html
+---
 
 On to Holynix 2, the last Holynix challenge as of this writing. Holynix 2 can be downloaded from [http://sourceforge.net/projects/holynix/files/2.0/](http://sourceforge.net/projects/holynix/files/2.0/). As before, Backtrack Linux is used as the attacking machine, and everything is run in a virtualized environment. Holynix 2 has a static IP address, so go over the README.txt file before starting and setup your network accordingly. 
 

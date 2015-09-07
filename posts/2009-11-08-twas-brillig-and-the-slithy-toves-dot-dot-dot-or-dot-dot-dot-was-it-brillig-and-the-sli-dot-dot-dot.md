@@ -1,3 +1,11 @@
+---
+layout: post
+title: "'Twas brillig, and the slithy toves... or... was it Brillig AND the sli..."
+date: 2009-11-08 00:36:44 -0400
+comments: true
+categories: musings hacking
+alias: /2009/11/twas-brillig-and-slithy-toves-or-was-it.html
+---
 
 So I managed to "forget" the passphrase to unlock my PGP private key. I kind of knew what the passphrase was, just wasn't quite
 sure what it looked like. For instance, I knew it flowed as "alice smacked the jabberwock", but I couldn't remember if it was

@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Kioptrix hacking challenge: Part 2"
+date: 2012-07-06 18:10:26 -0400
+comments: true
+categories: boot2root
+alias: /2012/07/kioptrix-hacking-challenge-part-2.html
+---
 
 The second Kioptrix challenge isn't quite as scan and exploit as the first, but still a relatively easy beginner challenge. The Kioptrix challenges can be downloaded from [http://www.kioptrix.com/blog/?page_id=135](http://www.kioptrix.com/blog/?page_id=135). It's actually labeled as Level 1.1. The author mentions that there are multiple ways to compromise the system. I've only explored one method, which is what I'll be describing here.
 

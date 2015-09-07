@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Thoughts on Offensive Security's Cracking the Perimeter course"
+date: 2013-10-28 18:10:26 -0400
+comments: true
+categories: howto hacking
+alias: /2013/10/thoughts-on-offensive-securitys.html
+---
 
 Several months ago I signed up for Offensive Security's [Cracking the Perimeter](http://www.offensive-security.com/information-security-training/cracking-the-perimeter/) (CTP) course. Having successfully completed the course, I wanted to write a short review on it. CTP focuses primarily on Windows exploit development, while touching a little bit on web application hacking. As CTP is marketed as a non-beginner course, students must complete a registration challenge before they will be allowed to take the course. The challenge itself is relatively easy, if you've done any hacking before, or completed [Penetration Testing with Backtrack](http://www.offensive-security.com/information-security-training/penetration-testing-with-backtrack/) (PWB), it should be pretty straightforward.
 

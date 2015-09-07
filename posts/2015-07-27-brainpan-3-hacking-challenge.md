@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Brainpan 3 Hacking Challenge"
+date: 2015-07-27 00:15:37 -0400
+comments: true
+categories: boot2root
+---
+
 Brainpan 3 is finally here! If you've completed the previous Brainpan releases, then you'll know what to expect. This time round, I've made it a tad bit more challenging so get your caffeine shots ready!
 
 <!--more-->

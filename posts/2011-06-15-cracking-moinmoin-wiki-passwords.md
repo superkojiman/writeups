@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Cracking MoinMoin Wiki Passwords"
+date: 2011-06-15 18:10:26 -0400
+comments: true
+categories: howto hacking
+alias: /2011/06/cracking-moinmoin-wiki-passwords.html
+---
 
 I wanted to audit the security of a server running the MoinMoin Wiki Engine version 1.9.2 and needed to see if I could crack the passwords on the site. Each user's information is stored in a file located in the site's data/user directory, for example: 1308083750.39.64129. This is a plaintext file which contains key-value pairs. There are two keys that we're interested in: enc_password and name
 

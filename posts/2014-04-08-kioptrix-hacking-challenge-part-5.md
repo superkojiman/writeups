@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Kioptrix hacking challenge: Part 5"
+date: 2014-04-08 02:35:09 -0400
+comments: true
+categories: boot2root
+alias: /2014/04/kioptrix-hacking-challenge-part-5.html
+---
 
 Kioptrix 2014 is the fifth installment of the Kioptrix boot2root series. It's been about two years since the last Kioptrix release, so I was pleasantly surprised when I found out that [loneferret](https://twitter.com/@loneferret) had decided to release a new one. Kioptrix 2014 can be downloaded from [Kioptrix.com](http://www.kioptrix.com/blog/a-new-vm-after-almost-2-years/) or from [VulnHUB.com](http://vulnhub.com/entry/kioptrix_2014-5,62/)
 

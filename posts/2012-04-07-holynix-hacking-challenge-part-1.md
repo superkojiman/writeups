@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Holynix hacking challenge: Part 1"
+date: 2012-04-07 18:10:26 -0400
+comments: true
+categories: boot2root hacking
+alias: /2012/04/holynix-hacking-challenge-part-1.html
+---
 
 I've been playing a few of these hacking challenges over the past few months, some are extremely easy, while others force you to think out of the box. Completing a challenge is rewarding, but the journey to completion is sometimes fraught with frustration. In this post I'm going to be describing how I completed the Holynix 1 challenge. Holynix 1 can be downloaded from [http://sourceforge.net/projects/holynix/files/1.0/](http://sourceforge.net/projects/holynix/files/1.0/) As before I'll be using Backtrack Linux to perform the attack and running Holynix on VMware. Both machines were running on the same network, so a netdiscover revealed the IP address of the target. I ran nmap against the target and pointed my browser to that IP address to see if a website was present:
 

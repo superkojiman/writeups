@@ -1,3 +1,11 @@
+---
+layout: post
+title: "From fuzzing to 0-day"
+date: 2014-05-14 16:34:48 -0400
+comments: true
+categories: howto hacking
+---
+
 A couple of days ago, I found an interesting bug during a fuzzing session that led to me creating a 0-day exploit for it. I've been asked a few times about the methods I use to find bugs and write exploits, so I've decided to take this opportunity to describe one particular workflow I use. In this post, I'll take you through finding a bug, analzying it, and creating a functional exploit. 
 
 <!--more-->

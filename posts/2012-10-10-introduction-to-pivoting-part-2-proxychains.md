@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Introduction to pivoting, Part 2: Proxychains"
+date: 2012-10-10 18:10:26 -0400
+comments: true
+categories: howto hacking
+alias: /2012/10/introduction-to-pivoting-part-2.html
+---
 
 This is part 2 of a series of posts on pivoting techniques. In part 1, we used SSH port forwarding to pivot our exploit and obtain remote access to our Windows XP machine. In this article, we'll be performing the same attack, but instead of using SSH local port forwarding, we'll use Proxychains and an SSH SOCKS proxy.
 

@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Parsing Nmap's output"
+date: 2012-09-15 18:10:26 -0400
+comments: true
+categories: boot2root
+alias: /2012/09/parsing-nmaps-output.html
+---
 
 Nmap is a favorite tool when it comes to running port scans. The output can be a bit much however, especially when you're dealing with many targets with many services. Nmap is capable of producing reports in text, grepable, and XML formats. When I was working on my OSCP, I wanted a lightweight tool that could quickly parse my Nmap reports and display clean results. I couldn't find one that did what I wanted, so I hacked something together. The end result, is a script called scanreport.sh
 

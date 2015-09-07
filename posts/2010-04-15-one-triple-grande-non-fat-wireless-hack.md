@@ -1,3 +1,11 @@
+---
+layout: post
+title: "One triple grande non-fat wireless hack please!"
+date: 2010-04-15
+comments: true
+categories: musings
+alias: /2010/04/one-triple-grande-non-fat-wireless-hack.html
+---
 
 Coffee shops can make an excellent location for attacking wireless networks. If a hacker can pick up your access point's signal, they can break into it from a coffee shop, the parking lot, or across the street. Most coffee shops such as Starbucks are popular hang outs for students with laptops, allowing the hacker to easily blend in without attracting suspicion. And of course there's the coffee and a comfortable place to sit.
 

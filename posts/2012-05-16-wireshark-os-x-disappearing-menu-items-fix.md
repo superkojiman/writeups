@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Wireshark OS X: Disappearing menu items fix"
+date: 2012-05-16 18:10:26 -0400
+comments: true
+categories: howto
+alias: /2012/05/wireshark-os-x-disappearing-menu-items.html
+---
 
 Wireshark on OS X runs on top of X11. As most people who've used X11 applications on OS X are aware, they look ugly, and don't match the theme on OS X. In an effort to prettify Wireshark, the developers have included a default theme to go with it: Clearlooks-Quicksilver-OSX. At first, this looks nice, up until you actually start using any of the menu items on Wireshark. The text just disappears. White text on white background. Have a look:
 

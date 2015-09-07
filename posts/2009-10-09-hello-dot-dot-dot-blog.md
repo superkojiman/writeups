@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Hello... blog?"
+date: 2009-10-09 18:10:26 -0400
+comments: true
+categories: musings
+alias: /2009/10/hello-blog.html
+---
 
 Another blog to clutter the already garbage infested Internet? Yes. But
 why?

@@ -1,3 +1,11 @@
+---
+layout: post
+title: "OwlNest Hacking Challenge"
+date: 2014-09-10 16:06:59 -0400
+comments: true
+categories: boot2root
+---
+
 It seems like more and more boot2roots are being submitted to VulnHub as of late. OwlNest by [Swappage](http://www.twitter.com/swappage) is one of the more recent ones that packs a good challenge. Grab it over at [VulnHub](http://vulnhub.com/entry/owlnest-102,102/) if you're interested in giving it a go. This was debuted at ESC 2014 CTF where no one was able to solve it. It took me several days to finish off this beast after getting stuck in a tarpit, but this was a whole lot of fun. 
 
 <!--more-->

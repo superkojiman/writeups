@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Introduction to pivoting, Part 4: Metasploit"
+date: 2012-10-22 18:10:26 -0400
+comments: true
+categories: howto hacking
+alias: /2012/10/introduction-to-pivoting-part-4.html
+---
 
 In this article, we'll look at pivoting using [Metasploit](http://www.metasploit.com/). If you have the option to use Metasploit, you'll find that it makes pivoting much easier. Metasploit can be installed on Linux, Windows, and Mac OS X, which makes it a pretty versatile tool. The number of modules included in the framework grows continuously, and its low learning curve makes it popular among hackers. 
 

@@ -1,3 +1,11 @@
+---
+layout: post
+title: "De-ICE hacking challenge: Part 1"
+date: 2011-07-19 18:10:26 -0400
+comments: true
+categories: boot2root hacking
+alias: /2011/07/de-ice-hacking-challenge-part-1.html
+---
 
 Over the weekend I decided to take the De-ICE Live CD Level 1 challenge. De-ICE provides a safe environment where you can practice your penetration testing skills. If you've never done a penetration test before, or are looking for practice, these Live CDs are a good place to start.
 

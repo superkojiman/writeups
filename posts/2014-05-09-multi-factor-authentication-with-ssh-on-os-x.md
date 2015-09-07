@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Multi-Factor Authentication with SSH on OS X"
+date: 2014-05-09 19:44:52 -0400
+comments: true
+categories: howto
+---
+
 This is a quick guide on how to setup multi-factor authentication with SSH using Google Authenticator. The goal is to require three items from the user in order to complete the authentication: SSH authentication keys, the user's password, and a one-time password using Google Authenticator. 
 
 <!--more-->

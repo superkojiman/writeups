@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Thoughts on Offensive Security's Penetration Testing with Backtrack course"
+date: 2012-09-05 18:10:26 -0400
+comments: true
+categories: musings
+alias: /2012/09/thoughts-about-pwb-and-oscp.html
+---
 
 
 The [Offensive Security Certified Professional](http://www.offensive-security.com/information-security-certifications/oscp-offensive-security-certified-professional/) (OSCP) certification is awarded to students who successfully complete Offensive Security's [Pentesting with Backtrack](http://www.offensive-security.com/information-security-training/penetration-testing-with-backtrack/) (PWB) course. This is an intense hands on course, where students are expected to use the knowledge and tools they've obtained, to hack into several machines in a virtual network. There is no hand holding, no spoon feeding, and the only hint a student usually receives, is "Try Harder". At the end of the course, the student must pass an exam and submit a penetration test report in order to earn the certificate. Unlike most exams, this one is 24 hours long, and the student must hack into several machines to obtain enough points to pass the exam.

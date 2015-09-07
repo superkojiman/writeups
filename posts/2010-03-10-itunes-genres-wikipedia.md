@@ -1,3 +1,11 @@
+---
+layout: post
+title: "iTunes. Genres? Wikipedia!"
+date: 2010-03-10 16:03:59 -0400
+comments: true
+categories: coding howto
+alias: /2010/03/itunes-genres-wikipedia.html
+---
 
 A long time ago I altered my iTunes library to include only artist name and song title. That's it. I removed any
 additional information including album name, genre, all of that. 

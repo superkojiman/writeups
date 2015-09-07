@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Writings from the past"
+date: 2009-10-10 18:20:08 -0400
+comments: true
+categories: howto
+alias: /2009/10/writings-from-past.html
+---
 
 Once upon a time I used to write tutorials for a site called
 Linuxnewbie.org

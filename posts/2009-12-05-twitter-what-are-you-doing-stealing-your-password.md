@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Twitter: What are you doing? - Stealing your password"
+date: 2009-12-05 10:02:28 -0400
+comments: true
+categories: hacking
+alias: /2009/12/twitter-what-are-you-doing-stealing.html
+---
 
 Twitter has two forms of authentication that it exposes to developers. The first is
 [OAuth](http://oauth.net/) and the second

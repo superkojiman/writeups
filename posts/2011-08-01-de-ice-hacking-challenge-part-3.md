@@ -1,3 +1,11 @@
+---
+layout: post
+title: "De-ICE hacking challenge: Part 3"
+date: 2011-08-01 18:10:26 -0400
+comments: true
+categories: boot2root hacking
+alias: /2011/08/de-ice-hacking-challenge-part-3.html
+---
 
 This is a walkthrough on how I completed level 2 of the De-ICE penetration testing Live CDs. I had completed level 1 a week before and talked about my experiences in a two part post ([part 1](/2011/07/19/de-ice-hacking-challenge-part-1/) and [part 2](/2011/07/20/de-ice-hacking-challenge-part-2/)). If you're interested in learning some hacking in a safe environment, I recommend checking out [HackingDojo](http://hackingdojo.com/pentest-media/) and downloading the De-ICE Live CDs.
 

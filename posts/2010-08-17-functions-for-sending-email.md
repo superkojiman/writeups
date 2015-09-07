@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Functions for sending email"
+date: 2010-08-17 18:10:26 -0400
+comments: true
+categories: coding
+alias: /2010/08/functions-for-sending-email.html
+---
 
 Email notifications are handy for when you need to be alerted to an event that happens on your machine. Sometimes I might write a shell script that looks for a specific string in a log file, and I might want it to send me an email. Now most Unix systems come with a command called mail. What frustrates me about this command is that there's no way to tell it which mail server to use. It always assumes that the localhost is the SMTP server. 
 
