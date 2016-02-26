@@ -12,6 +12,8 @@ Brainpan 3 is finally here! If you've completed the previous Brainpan releases, 
 
 Brainpan 3 can be downloaded from VulnHub: [https://www.vulnhub.com/entry/brainpan-3,121/](https://www.vulnhub.com/entry/brainpan-3,121/)
 
+It's also mirrored at [Google Drive](https://drive.google.com/open?id=0B41M3Dojh4xbUVczU09jWWtraW8), athough be warned that Google imposes bandwidth limits.
+
 Here's the obligatory disclaimer: 
 
 > By using this virtual machine, you agree that in no event will I be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of or in connection with the use of this software.
