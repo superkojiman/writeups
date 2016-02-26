@@ -1,6 +1,7 @@
 # Writeups
 
 ## 2015
+ * [Fristileaks Hacking Challenge](posts/2015-12-15-fristileaks-hacking-challenge.md)
  * [A ROP primer solution](posts/2015-08-19-a-rop-primer-solution.md)
  * [NullByte 0x01 hacking challenge](posts/2015-08-06-nullbyte-0x01-hacking-challenge.md)
  * [Brainpan 3 hacking challenge](posts/2015-07-27-brainpan-3-hacking-challenge.md)
