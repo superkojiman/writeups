@@ -50,7 +50,7 @@ You can also grab the precompiled binary [here](https://gist.github.com/superkoj
 
 In 32-bit binaries, a ret2libc attack involves setting up a fake stack frame so that the function calls a function in libc and passes it any parameters it needs. Typically this would be returning to system() and having it execute "/bin/sh". 
 
-In 64-bit binaries, function parameters are passed in registers, therefore there's no need to fake a stack frame. The first six parameters are passed in registers RDI, RSI, RDX, RCX, R8, and R9. Anything beyond that is passed in the stack. This means that before returning to our function of choice in libc, we need to make sure the registers are setup correctly with the parameters the function is expecting. This in turn leads us to having to use a bit of ROP. If you're not familiar with ROP, don't worry, we won't be going into the crazy stuff. 
+In 64-bit binaries, function parameters are passed in registers, therefore there's no need to fake a stack frame. The first six parameters are passed in registers RDI, RSI, RDX, RCX, R8, and R9. Anything beyond that is passed in the stack. This means that before returning to our function of choice in libc, we need to make sure the registers are setup correctly with the parameters the function is expecting. This in turn leads us to having to use a bit of Return Oriented Programming (ROP). If you're not familiar with ROP, don't worry, we won't be going into the crazy stuff. 
 
 We'll start with a simple exploit that returns to system() and executes "/bin/sh". We need a few things:
 
