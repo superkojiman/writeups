@@ -1,8 +1,19 @@
 # Writeups
 
-## 2015
+## 2016
+
+ * [Mr. Robot hacking challenge](2016-09-08-mr-robot-hacking-challenge.md)
+ * [Tommy Boy hacking challenge](posts/2016-09-07-tommy-boy-hacking-challenge.md)
+ * [Necromancer hacking challenge](posts/2016-09-04-necromancer-hacking-challenge.md)
+ * [The Pentesters: 64-Bit AppSec Primer (Beta) hacking challenge](posts/2016-08-16-the-pentesters-64-bit-appsec-primer-beta-hacking-challenge.md)
+ * [DC416: Toronto's DEF CON chapter](posts/2016-07-26-dc416-torontos-defcon-chapter.md)
+ * [Milnet hacking challenge](posts/2016-06-02-milnet-hacking-challenge.md)
+ * [64-bit Linux stack smashing tutorial](posts/2016-03-18-64-bit-linux-stack-smashing-tutorial-part-3.md)
  * [Radare 2 in 0x1E minutes](posts/2016-03-08-radare-2-in-0x1e-minutes.md)
+
+## 2015
  * [Fristileaks hacking challenge](posts/2015-12-15-fristileaks-hacking-challenge.md)
+ * [CSAW CTF Quals 2015 Autobots writeup](posts/2015-09-21-csaw-ctf-quals-2015-autobots-writeup.md)
  * [A ROP primer solution](posts/2015-08-19-a-rop-primer-solution.md)
  * [NullByte 0x01 hacking challenge](posts/2015-08-06-nullbyte-0x01-hacking-challenge.md)
  * [Brainpan 3 hacking challenge](posts/2015-07-27-brainpan-3-hacking-challenge.md)
