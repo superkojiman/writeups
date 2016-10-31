@@ -4,7 +4,7 @@ title: "Introduction to pivoting, Part 1: SSH"
 date: 2012-10-06 18:10:26 -0400
 comments: true
 categories: howto hacking
-alias: /2012/10/introduction-to-pivoting-part-1-ssh.html
+redirect_from: /2012/10/introduction-to-pivoting-part-1-ssh.html
 ---
 
 Pivoting is a technique that allows attackers to use a compromised system to attack other machines in the same network, or more devastatingly, machines in another network that the compromised machine has access to. There are several techniques that can be used to pivot deeper into the network, and I'll be describing some of them in the next few articles. I've found that this topic can be a bit confusing to beginners, and I hope that these articles will help clear things up. In this article, we'll look at pivoting with SSH.
@@ -21,7 +21,7 @@ We've already compromised the web server and obtained SSH access to it as the us
 
 ### The exploit
 
-The Windows XP machine runs a vulnerable service called Server-Strcpy on port 10000. Server-Strcpy is part of the [SecurityTube Exploit Research Megaprimer](http://www.securitytube.net/video/1399) series, and can be downloaded at [http://code.securitytube.net/Server-Strcpy.exe](http://code.securitytube.net/Server-Strcpy.exe). I've written a quick exploit for Server-Strcpy.exe that binds a shell on port 4444, and can be downloaded [here](http://techorganic.com/software/serverstrcpy.py).
+The Windows XP machine runs a vulnerable service called Server-Strcpy on port 10000. Server-Strcpy is part of the [SecurityTube Exploit Research Megaprimer](http://www.securitytube.net/video/1399) series, and can be downloaded at [http://code.securitytube.net/Server-Strcpy.exe](http://code.securitytube.net/Server-Strcpy.exe). I've written a quick exploit for Server-Strcpy.exe that binds a shell on port 4444, and can be downloaded [here](https://gist.github.com/superkojiman/fcb256c4ca40da00ad9676efd07a161c).
 
 ### The attack
 

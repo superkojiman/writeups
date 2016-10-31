@@ -4,7 +4,7 @@ title: "Introduction to pivoting, Part 3: Ncat"
 date: 2012-10-16 18:10:26 -0400
 comments: true
 categories: howto hacking
-alias: /2012/10/introduction-to-pivoting-part-3-ncat.html
+redirect_from: /2012/10/introduction-to-pivoting-part-3-ncat.html
 ---
 
 In the past two articles, we pivoted our exploit to our target with the help of SSH. If SSH is not available, we can try to use client-to-client and listener-to-listener relays with netcat, as described by Ed Skoudis in [Secrets of America's Top Pen Testers](http://www.inguardians.com/research/docs/Skoudis_pentestsecrets.pdf). We will modify Skoudis' technique by using ncat instead of netcat. Ncat is meant to be a replacement for netcat, and is included in the Nmap 5.x and higher package. I prefer ncat over netcat for this as it allows us to use the same syntax to set up the relays regardless of whether the pivot is running Linux, Windows, or Mac OS X.
@@ -21,7 +21,7 @@ We've already compromised the web server and obtained SSH access to it as the us
 
 ### The exploit
 
-The Windows XP machine runs a vulnerable service called Server-Strcpy on port 10000. Server-Strcpy is part of the [SecurityTube Exploit Research Megaprimer](http://www.securitytube.net/video/1399) series, and can be downloaded at [http://code.securitytube.net/Server-Strcpy.exe](http://code.securitytube.net/Server-Strcpy.exe). I've written a quick exploit for Server-Strcpy.exe that binds a shell on port 4444, and can be downloaded [here](http://techorganic.com/software/serverstrcpy.py).
+The Windows XP machine runs a vulnerable service called Server-Strcpy on port 10000. Server-Strcpy is part of the [SecurityTube Exploit Research Megaprimer](http://www.securitytube.net/video/1399) series, and can be downloaded at [http://code.securitytube.net/Server-Strcpy.exe](http://code.securitytube.net/Server-Strcpy.exe). I've written a quick exploit for Server-Strcpy.exe that binds a shell on port 4444, and can be downloaded [here](https://gist.github.com/superkojiman/fcb256c4ca40da00ad9676efd07a161c).
 
 ### The attack
 

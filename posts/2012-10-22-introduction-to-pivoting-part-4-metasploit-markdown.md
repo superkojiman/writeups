@@ -4,7 +4,7 @@ title: "Introduction to pivoting, Part 4: Metasploit"
 date: 2012-10-22 18:10:26 -0400
 comments: true
 categories: howto hacking
-alias: /2012/10/introduction-to-pivoting-part-4.html
+redirect_from: /2012/10/introduction-to-pivoting-part-4.html
 ---
 
 In this article, we'll look at pivoting using [Metasploit](http://www.metasploit.com/). If you have the option to use Metasploit, you'll find that it makes pivoting much easier. Metasploit can be installed on Linux, Windows, and Mac OS X, which makes it a pretty versatile tool. The number of modules included in the framework grows continuously, and its low learning curve makes it popular among hackers. 
@@ -21,7 +21,7 @@ We've already compromised the web server and obtained some form of shell access 
 
 ### The exploit
 
-The Windows XP machine runs a vulnerable service called Server-Strcpy on port 10000. Server-Strcpy is part of the [SecurityTube Exploit Research Megaprimer](http://www.securitytube.net/video/1399) series, and can be downloaded at [http://code.securitytube.net/Server-Strcpy.exe](http://code.securitytube.net/Server-Strcpy.exe). I ported the python exploit we used in the previous articles into a Metasploit module which can be downloaded [here](http://techorganic.com/software/serverstrcpy.rb). It should be saved in ~/.msf4/modules/exploits/windows/misc/. 
+The Windows XP machine runs a vulnerable service called Server-Strcpy on port 10000. Server-Strcpy is part of the [SecurityTube Exploit Research Megaprimer](http://www.securitytube.net/video/1399) series, and can be downloaded at [http://code.securitytube.net/Server-Strcpy.exe](http://code.securitytube.net/Server-Strcpy.exe). I ported the python exploit we used in the previous articles into a Metasploit module which can be downloaded [here](https://gist.github.com/superkojiman/df9df065e2bbbef365aa5e2214e7f934). It should be saved in ~/.msf4/modules/exploits/windows/misc/. 
 
 ### The attack
 
